@@ -1,13 +1,10 @@
-import { text } from "ziko";
-const A=1
-const B=2
-const ZikoSomething = {
-    A,
-    B
-}
-export default ZikoSomething;
-export{
-    A,
-    B,
-    text
-}
+export * from "./accordion";
+export * from "./carousel";
+export * from "./code-note";
+export * from "./tabs";
+export * from "./alert";
+export * from "./splitter";
+export * from "./pagination";
+export * from "./menu";
+export * from "./modal"
+export * from "./slider"
