@@ -1,10 +1,3 @@
-export * from "./accordion";
-export * from "./carousel";
-export * from "./code-note";
-export * from "./tabs";
-export * from "./alert";
-export * from "./splitter";
-export * from "./pagination";
-export * from "./menu";
-export * from "./modal"
-export * from "./slider"
+import * as ZikoUI from "./all.js"
+export * from "./all.js"
+export default ZikoUI
