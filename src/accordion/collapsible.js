@@ -5,7 +5,7 @@ import{
 } from "ziko"
 class ZikoUICollapbsible extends ZikoUIElement{
     constructor(summary,content,openIcon="😁", closeIcon=openIcon){
-        super("details","Collapsible")
+        super("details","Collapsible", {useDefaultStyle : true})
         Object.assign(this.cache,{
             icons:{
                 open : openIcon,

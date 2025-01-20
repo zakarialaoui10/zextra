@@ -1,3 +1,8 @@
+import {Collapsible} from "ziko-ui";
+import { h1 } from "ziko";
 export default ()=>{
-    console.log("me")
+    Collapsible(
+        "hhh",
+        h1("content")
+    )
 }
