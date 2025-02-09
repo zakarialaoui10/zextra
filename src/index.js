@@ -1,3 +1,2 @@
-import * as ZikoUI from "./all.js"
-export * from "./all.js"
-export default ZikoUI
+export * from "./ui/index.js"
+export * from "./canvas/index.js"

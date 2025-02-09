@@ -2,8 +2,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from '@rollup/plugin-commonjs';
 import terser from "@rollup/plugin-terser";
 
-const Addon_name = "ziko-ui";
-const NamedExport = "ZikoUI"
+const Addon_name = "zextra";
+const NamedExport = "Zextra";
 const Author = "";
 
 const banner = `
@@ -13,17 +13,24 @@ const banner = `
   Date : ${new Date()}
 */
 `;
+
 const isProduction = process.env.NODE_ENV === "production";
+const Target = process.env.TARGET;
+
+const inputs = {
+    ui : "src/ui/index.js",
+    canvas : "src/canvas/index.js"
+}
 
 const output = [
   {
-    file: `dist/${Addon_name}.mjs`,
+    file: `dist/${Addon_name}-${Target}.mjs`,
     format: "es",
     banner,
     exports: "named",
   },
   {
-    file: `dist/${Addon_name}.js`,
+    file: `dist/${Addon_name}-${Target}.js`,
     format: "umd",
     name: NamedExport,
     banner,
@@ -33,37 +40,10 @@ const output = [
     },
   },
 ];
-isProduction &&
-  output.push(
-    {
-      file: `dist/${Addon_name}.min.mjs`,
-      format: "es",
-      banner,
-      exports: "named",
-    },
-    {
-      file: `dist/${Addon_name}.min.js`,
-      format: "umd",
-      name: NamedExport,
-      banner,
-      exports: "named",
-      plugins: [
-        terser({
-          output: {
-            comments: (node, { type, value }) =>
-              type === "comment2" && value.includes("Author"),
-          },
-        }),
-      ],
-    },
-  );
 
 export default {
-  input: "src/index.js",
+  input : inputs[Target], 
   output,
   external: ["ziko"],
-  plugins: [
-    resolve(),
-    commonjs(),
-  ],
+  plugins: [resolve(), commonjs()],
 };

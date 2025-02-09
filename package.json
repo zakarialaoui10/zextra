@@ -1,14 +1,27 @@
 {
-  "name": "ziko-ui",
+  "name": "zextra",
   "version": "0.0.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development rollup --config rollup.config.js",
-    "watch": "cross-env NODE_ENV=development rollup --config rollup.config.js -w",
-    "build": "cross-env NODE_ENV=production rollup --config rollup.config.js"
+
+    "dev:ui":"cross-env NODE_ENV=development TARGET=ui rollup --config rollup.config.js",
+    "watch:ui":"cross-env NODE_ENV=development TARGET=ui rollup --config rollup.config.js -w",
+    "build:ui":"cross-env NODE_ENV=production TARGET=ui rollup --config rollup.config.js",
+
+    "dev:canvas":"cross-env NODE_ENV=development TARGET=canvas rollup --config rollup.config.js",
+    "watch:canvas":"cross-env NODE_ENV=development TARGET=canvas rollup --config rollup.config.js -w",
+    "build:canvas":"cross-env NODE_ENV=production TARGET=canvas rollup --config rollup.config.js",
+
+    "dev:svg":"cross-env NODE_ENV=development TARGET=svg rollup --config rollup.config.js",
+    "watch:svg":"cross-env NODE_ENV=development TARGET=svg rollup --config rollup.config.js -w",
+    "build:svg":"cross-env NODE_ENV=production TARGET=svg rollup --config rollup.config.js",
+
+    "dev":"npm run dev:ui & npm run dev:canvas",
+    "build" : "npm run build:ui & npm run build:canvas"
+
   },
   "author": "",
   "keywords": [
@@ -24,6 +37,6 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "ziko": "^0.0.23"
+    "ziko": "^0.0.24"
   }
 }
