@@ -19,6 +19,10 @@
     "watch:svg":"cross-env NODE_ENV=development TARGET=svg rollup --config rollup.config.js -w",
     "build:svg":"cross-env NODE_ENV=production TARGET=svg rollup --config rollup.config.js",
 
+    "dev:index":"cross-env NODE_ENV=development TARGET=index rollup --config rollup.config.js",
+    "watch:index":"cross-env NODE_ENV=development TARGET=index rollup --config rollup.config.js -w",
+    "build:index":"cross-env NODE_ENV=production TARGET=index rollup --config rollup.config.js",
+
     "dev":"npm run dev:ui & npm run dev:canvas",
     "build" : "npm run build:ui & npm run build:canvas"
 

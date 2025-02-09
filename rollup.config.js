@@ -17,20 +17,23 @@ const banner = `
 const isProduction = process.env.NODE_ENV === "production";
 const Target = process.env.TARGET;
 
+const OUTPUT_NAME = Target === "index" ? `dist/zextra` : `dist/zextra-${Target}` 
+
 const inputs = {
+    index : "src/index.js",
     ui : "src/ui/index.js",
     canvas : "src/canvas/index.js"
 }
 
 const output = [
   {
-    file: `dist/${Addon_name}-${Target}.mjs`,
+    file: `${OUTPUT_NAME}.mjs`,
     format: "es",
     banner,
     exports: "named",
   },
   {
-    file: `dist/${Addon_name}-${Target}.js`,
+    file: `${OUTPUT_NAME}.js`,
     format: "umd",
     name: NamedExport,
     banner,
@@ -40,6 +43,26 @@ const output = [
     },
   },
 ];
+
+isProduction && output.push({
+      file: `${OUTPUT_NAME}.min.js`,
+      format: "umd",
+      name: NamedExport,
+      banner,
+      globals: {
+        ziko: "Ziko",
+      },
+      exports: "named",
+      plugins: [
+        terser({
+          output: {
+            comments: (node, { type, value }) =>
+              type === "comment2" && value.includes("Author"),
+          },
+        }),
+      ],
+    },
+)
 
 export default {
   input : inputs[Target], 

@@ -4,6 +4,9 @@ import {
   text,
   h3
 } from "ziko"
+
+// To Be Fixed
+import {palette} from "./palette.js"
 class ZikoUIAlert extends ZikoUIFlex{
     constructor(type, title, content){
         super()

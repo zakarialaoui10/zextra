@@ -1,5 +1,5 @@
-import { ZikoUIContainerElement } from "ziko";
-class ZikoUIModal extends ZikoUIContainerElement{
+import { ZikoUIElement } from "ziko";
+class ZikoUIModal extends ZikoUIElement{
     constructor(...UIElements){
         super("dialog", "modal")
         this.append(...UIElements);

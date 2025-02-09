@@ -1,5 +1,5 @@
-import {ZikoUIContainerElement} from "ziko";
-class ZikoUIAccordion extends ZikoUIContainerElement{
+import {ZikoUIElement} from "ziko";
+class ZikoUIAccordion extends ZikoUIElement{
     constructor(...Collapsible){
         super("div", "Accordion")
         this.append(...Collapsible);

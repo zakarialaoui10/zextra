@@ -3,14 +3,28 @@
 Zextra is designed to seamlessly integrate with ZikoJS. It extends the core Ziko functionality by adding new classes, methods, and utilities while maintaining compatibility with existing ZikoJS components and elements.
 
 
-UI : 
+UI Elements:
+ - Accordion 
+ - Alert
+ - Carousel
+ - Modal
+ - Pagination
+ - Slider
+ - Splitter
+ - Tabs
+
 
 Canvas : 
 
 Math : 
+ - Signal 
 
 Svg : 
 
 Data : 
 
 Time : 
+
+Reactivity : 
+
+
