@@ -1,4 +1,1 @@
-const Svg = "svg"
-export {
-    Svg
-}
+export * from "./Elements/index.js"
