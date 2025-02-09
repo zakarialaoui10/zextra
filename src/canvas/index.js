@@ -1,4 +1,1 @@
-const Canvas = "canvas"
-export {
-    Canvas
-}
+export * from "./elements/index.js"
