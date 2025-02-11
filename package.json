@@ -4,6 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "type": "module",
+  "exports": {
+    "./ui":"./dist/zextra-ui.mjs",
+    "./canvas":"./dist/zextra-canvas.mjs",
+    "./svg":"./dist/zextra-svg.mjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 

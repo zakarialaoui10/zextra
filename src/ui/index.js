@@ -1,6 +1,6 @@
 export * from "./accordion";
 export * from "./carousel";
-export * from "./code-note";
+// export * from "./code-note";
 export * from "./tabs";
 export * from "./alert";
 export * from "./splitter";
