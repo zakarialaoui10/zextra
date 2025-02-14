@@ -1,4 +1,4 @@
-import { p,App,Flex } from "ziko"
+import { p, App, Flex } from "ziko"
 
 const {QueryParams} = __Ziko__
 export default ()=>{

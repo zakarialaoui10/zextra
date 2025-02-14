@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "exports": {
+    ".":"./dist/zextra.mjs",
     "./ui":"./dist/zextra-ui.mjs",
     "./canvas":"./dist/zextra-canvas.mjs",
     "./svg":"./dist/zextra-svg.mjs"
