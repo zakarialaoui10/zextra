@@ -19,7 +19,7 @@ Canvas :
 Math : 
  - Signal 
 
-Svg : 
+Svg : Custom elements 
 
 Data : 
 
