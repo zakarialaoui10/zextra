@@ -8,89 +8,116 @@ import {h1, tags} from "ziko"
 // // const pages = import.meta.glob("./src/pages/**/*.js")
 // // console.log(Object.keys(pages))
 
-import {TreeViewItem} from "zextra/ui/tree-view"
+import {TreeItem, TreeView} from "zextra/ui/tree-view"
 
-// globalThis.treeItem = TreeViewItem({label : "Label"})
+// globalThis.treeItem = TreeItem({label : "Label"})
 
-globalThis.c = TreeViewItem({label : " Test .... "}),
-tags.ul({},
-    TreeViewItem({ label : "1. Zikojs Core"},
-        TreeViewItem({ label : "1.1 Math"},
-            TreeViewItem({ label : "1.1.1 Functions", href : "#"}),
-            TreeViewItem({ label : "1.1.2 Complex"}),
-            TreeViewItem({ label : "1.1.3 Matrix"}),
-            TreeViewItem({ label : "1.1.4 Random"}),
+globalThis.Test = TreeItem({label : " Test .... "}),
+globalThis.tv = TreeView(
+    TreeItem({ label : "1. Zikojs Core"},
+        TreeItem({ label : "1.1 Math"},
+            TreeItem({ label : "1.1.1 Functions", href : "#"}),
+            TreeItem({ label : "1.1.2 Complex"}),
+            TreeItem({ label : "1.1.3 Matrix"}),
+            TreeItem({ label : "1.1.4 Random"}),
         ),
-        TreeViewItem({ label : "1.2 UI"},
-            TreeViewItem({label : "1.2.1 Primitive Elements"}),
-            TreeViewItem({label : "1.2.2 Flex"}),
-            TreeViewItem({label : "1.2.3 Grid"}),
-            TreeViewItem({label : "1.2.4 Suspense"}),
-            TreeViewItem({label : "1.2.5 Wrappers"}),
+        TreeItem({ label : "1.2 UI"},
+            TreeItem({label : "1.2.1 Primitive Elements"}),
+            TreeItem({label : "1.2.2 Flex"}),
+            TreeItem({label : "1.2.3 Grid"}),
+            TreeItem({label : "1.2.4 Suspense"}),
+            TreeItem({label : "1.2.5 Wrappers"}),
         ),
-        TreeViewItem({ label : "1.3 App"},
-            TreeViewItem({label : "1.3.1 Client Side File Based Routing"})
+        TreeItem({ label : "1.3 App"},
+            TreeItem({label : "1.3.1 Client Side File Based Routing"})
         ),
-        TreeViewItem({ label : "1.4 Time"}),
-        TreeViewItem({ label : "1.5 Interactivity"},
-            TreeViewItem({label : "1.5.1 Events"}),
-            TreeViewItem({label : "1.5.1 Observers"}),
-            TreeViewItem({label : "1.5.1 Event Emitter"}),
+        TreeItem({ label : "1.4 Time"}),
+        TreeItem({ label : "1.5 Interactivity"},
+            TreeItem({label : "1.5.1 Events"}),
+            TreeItem({label : "1.5.1 Observers"}),
+            TreeItem({label : "1.5.1 Event Emitter"}),
         )
     ),
-    TreeViewItem({label : "2. Ziko-Server"},
-        TreeViewItem({label : "2.1 File Based Routing"}),
-        TreeViewItem({label : "2.2 Server Side Rendering"}),
-        TreeViewItem({label : "2.3 Static Site Generation"}),
-        TreeViewItem({label : "2.4 Client Side Hydration"}),
+    TreeItem({label : "2. Ziko-Server"},
+        TreeItem({label : "2.1 File Based Routing"}),
+        TreeItem({label : "2.2 Server Side Rendering"}),
+        TreeItem({label : "2.3 Static Site Generation"}),
+        TreeItem({label : "2.4 Client Side Hydration"}),
     ),
-    TreeViewItem({label : "3. Mdzjs"}),
-    TreeViewItem({label : "4. Ziko-Wrapper"},
-        TreeViewItem({label : "4.1 Hyperscript-Based"},
-            TreeViewItem({label : "4.1.1 Vanjs"}),
-            c
+    TreeItem({label : "3. Mdzjs"}),
+    TreeItem({label : "4. Ziko-Wrapper"},
+        TreeItem({label : "4.1 Hyperscript-Based"},
+            TreeItem({label : "4.1.1 Vanjs"}),
         ),
-        TreeViewItem({label : "4.2 JSX-Based"},
-            TreeViewItem({label : "4.2.1 React"}),
-            TreeViewItem({label : "4.2.2 Preact"}),
-            TreeViewItem({label : "4.3.2 Solid"})
+        TreeItem({label : "4.2 JSX-Based"},
+            TreeItem({label : "4.2.1 React"}),
+            TreeItem({label : "4.2.2 Preact"}),
+            Test,
+            TreeItem({label : "4.3.2 Solid"})
         ),
-        TreeViewItem({label : "4.3 Template-Based"},
-            TreeViewItem({label : "4.3.1 Vue"}),
-            TreeViewItem({label : "4.3.2 Svelte"}),
+        TreeItem({label : "4.3 Template-Based"},
+            TreeItem({label : "4.3.1 Vue"}),
+            TreeItem({label : "4.3.2 Svelte"}),
         ),
-        TreeViewItem({label : "4.4 Meta-Frameworks"},
-            TreeViewItem({label : "4.4.1 Astro"}),
-            TreeViewItem({label : "4.4.2 Next"}),
-            TreeViewItem({label : "4.4.2 Svelte-Kit"}),
-            TreeViewItem({label : "4.4.2 Solid-Start"}),
+        TreeItem({label : "4.4 Meta-Frameworks"},
+            TreeItem({label : "4.4.1 Astro"}),
+            TreeItem({label : "4.4.2 Next"}),
+            TreeItem({label : "4.4.2 Svelte-Kit"}),
+            TreeItem({label : "4.4.2 Solid-Start"}),
         )
     ),
-    TreeViewItem({label : "5. Zextra"},
-            TreeViewItem({label : "5.1 UI Components"}),
-            TreeViewItem({label : "5.1 Math "}),
+    TreeItem({label : "5. Zextra"},
+            TreeItem({label : "5.1 UI Components"}),
+            TreeItem({label : "5.1 Math "}),
     ),
-    TreeViewItem({label : "6. Addons"},
-            TreeViewItem({label : "5.1 Ziko-gl"}),
-            TreeViewItem({label : "5.2 Ziko-code "}),
-            TreeViewItem({label : "5.2 Ziko-chart "}),
-            TreeViewItem({label : "5.2 Ziko-icons "}),
-            TreeViewItem({label : "5.2 P5.wrapper "}),
-            TreeViewItem({label : "5.2 Ziko-lottie "}),
-            TreeViewItem({label : "5.2 Ziko-keyframes "}),
+    TreeItem({label : "6. Addons"},
+            TreeItem({label : "5.1 Ziko-gl"}),
+            TreeItem({label : "5.2 Ziko-code "}),
+            TreeItem({label : "5.2 Ziko-chart "}),
+            TreeItem({label : "5.2 Ziko-icons "}),
+            TreeItem({label : "5.2 P5.wrapper "}),
+            TreeItem({label : "5.2 Ziko-lottie "}),
+            TreeItem({label : "5.2 Ziko-keyframes "}),
     ),
-    TreeViewItem({label : "7. Transformers"},
-            TreeViewItem({label : "7.1 Xlsx-Transformer"}),
+    TreeItem({label : "7. Transformers"},
+            TreeItem({label : "7.1 Xlsx-Transformer"}),
     ),
-    TreeViewItem({label : "7. Adapters"},
-            TreeViewItem({label : "7.1 Xlsx-Transformer"}),
+    TreeItem({label : "8. Adapters"},
+            TreeItem({label : "8.1 Deno"}),
+            TreeItem({label : "8.2 Bun"}),
+    ),
+    TreeItem({label : "9. Kit"},
+            // TreeItem({label : "9.1 Xlsx-Transformer"}),
     )
 ).style({
-    listStyle: 'none',
-    paddingLeft: '1.2em',
-    margin: '0',
-    overflow : 'auto',
     color : 'darkblue',
-}).setAttr({
-    tabindex : 0
+    border : '2px darkblue solid',
+    display : 'inline-block'
 })
+
+function getNumberingString(treeView, targetItem) {
+    if (!treeView.isTreeView) return null;
+    
+    function findPath(items, target, currentPath = []) {
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            if (!item.isTreeItem) continue;
+            
+            const newPath = [...currentPath, i + 1];
+            
+            if (item === target) {
+                return newPath.join('.');
+            }
+            
+            if (item.items && item.items.length > 0) {
+                const result = findPath(item.items, target, newPath);
+                if (result) return result;
+            }
+        }
+        return null;
+    }
+    
+    return findPath(treeView.items, targetItem);
+}
+
+globalThis.getNumberingString = getNumberingString

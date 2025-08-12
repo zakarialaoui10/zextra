@@ -1,7 +1,7 @@
 import { ZikoUIElement, tags } from "ziko/ui"
-class ZikoTreeViewItem extends ZikoUIElement{
+class ZikoUITreeItem extends ZikoUIElement{
     constructor({label = '', opened = false, href } = {}, ...items){
-        super("li","ziko-tree-view-item")
+        super('li','tree-item')
         Object.assign(this.cache,{
             isOpened : opened,
         })
@@ -51,7 +51,11 @@ class ZikoTreeViewItem extends ZikoUIElement{
             e.event.stopPropagation();        
             this.cache.isOpened = !this.cache.isOpened   
             this.#maintain()   
-        })   
+        })
+        this.label_container.onKeyDown(e=>{
+            if(e.kd === "Enter") this.toggle()
+        })
+        this.items = this.items_container.items;   
     }
     #maintain(){
         this.setAttr("aria-expanded", this.isOpened());
@@ -63,17 +67,28 @@ class ZikoTreeViewItem extends ZikoUIElement{
         }
         else this.arrow.element.textContent = ''
     }
-    isTreeViewItem(){
+    isTreeItem(){
         return true
+    }
+    toggle(){
+        this.cache.isOpened = !this.cache.isOpened;
+        this.#maintain()
+        return this;
     }
     get parent(){
         // To Check
         return super.parent.parent
     }
+    level(){
+        return {
+           h :  this.parent.items.findIndex(n=>n == this) + 1,
+           v : this.getLevel()
+        }
+    }
     getLevel() {
         let level = 1;
         let current = this.parent;
-        while (current && current.isTreeViewItem && current.isTreeViewItem()) {
+        while (current && current.isTreeItem && current.isTreeItem()) {
             level++;
             current = current.parent;
         }        
@@ -85,10 +100,27 @@ class ZikoTreeViewItem extends ZikoUIElement{
     hasItems(){
         return this.items_container?.items.length > 0
     }
+    getNumbering() {
+    const numbers = [];
+    // start from this node
+    let node = this;
+    while (node) {
+      const parent = node.parent;           // likely the UL container
+      if (!parent || !Array.isArray(parent.items)) break;
+      const idx = parent.items.indexOf(node);
+      if (idx === -1) break;                // can't find this node among parent's items -> stop
+      // prepend the 1-based index
+      numbers.unshift(idx + 1);
+      // move up: parent.parent should be the LI (the owner TreeItem) or the TreeView root container
+      node = parent.parent;
+    }
+
+    return numbers.length ? numbers.join('.') : '';
+  }
 }
 
-const TreeViewItem = ({label, href, opened} = {}, ...items) => new ZikoTreeViewItem({label, href, opened}, ...items);
+const TreeItem = ({label, href, opened} = {}, ...items) => new ZikoUITreeItem({label, href, opened}, ...items);
 export{
-    ZikoTreeViewItem,
-    TreeViewItem
+    ZikoUITreeItem,
+    TreeItem
 }
