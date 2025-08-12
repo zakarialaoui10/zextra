@@ -22,8 +22,10 @@ class ZikoUITreeItem extends ZikoUIElement{
             transition: 'transform 0.15s ease'
         })
         this.label = href ? tags.a({href}, label) :  tags.span(label);
+        this.numbering = tags.span({}, '')
         this.label_container = tags.div(
             this.arrow, 
+            this.numbering,
             this.label,
         ).style({
             display:'flex',
@@ -66,6 +68,7 @@ class ZikoUITreeItem extends ZikoUIElement{
             })
         }
         else this.arrow.element.textContent = ''
+        // this.numbering.element.textContent = this.cache.numbering;
     }
     isTreeItem(){
         return true

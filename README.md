@@ -12,19 +12,12 @@ UI Elements:
  - Slider
  - Splitter
  - Tabs
+ - TreeView
+ - Canvas
+ - Svg
 
-
-Canvas : 
 
 Math : 
  - Signal 
-
-Svg : Custom elements 
-
-Data : 
-
-Time : 
-
-Reactivity : 
 
 
