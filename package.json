@@ -1,10 +1,13 @@
 {
   "name": "zextra",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
   "exports": {
+    "./ui/*": {
+      "import" : "./src/ui/*/index.js"
+    },
     ".": "./dist/zextra.mjs",
     "./ui": "./dist/zextra-ui.mjs",
     "./canvas": "./dist/zextra-canvas.mjs",
@@ -27,7 +30,7 @@
     "dev": "npm run dev:ui & npm run dev:canvas",
     "build": "npm run build:ui & npm run build:canvas"
   },
-  "author": "",
+  "author": "zakaria elalaoui",
   "keywords": [
     "zikojs",
     "zikojs-addons"
@@ -42,7 +45,7 @@
   },
   "dependencies": {
     "mdzjs": "^0.10.0",
-    "ziko": "^0.0.24",
+    "ziko": "^0.36.0",
     "ziko-server": "^0.9.1",
     "ziko-wrapper": "^0.28.0"
   }
