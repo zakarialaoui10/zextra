@@ -1,7 +1,10 @@
 import {ZikoUIElement} from 'ziko'
 class ZikoUITreeView extends ZikoUIElement{
-    constructor(...TreeItems){
+    constructor({displayNumbering},...TreeItems){
         super('ul','tree-view')
+        Object.assign(this.cache,{
+            displayNumbering
+        })
         this.setAttr({
             role : 'tree',
             tabindex : 0
@@ -18,8 +21,9 @@ class ZikoUITreeView extends ZikoUIElement{
     isTreeView(){
         return true;
     }
-    updateNumbering() {    
-        function processItems(items, currentPath = []) {
+    updateNumbering() {   
+        if(this.cache.displayNumbering){
+            function processItems(items, currentPath = []) {
             items.forEach((item, index) => {
                 if (!item.isTreeItem) return;
                 const newPath = [...currentPath, index + 1];
@@ -32,10 +36,12 @@ class ZikoUITreeView extends ZikoUIElement{
             });
         }
         processItems(this.items);
+        } 
+        return this;
     }   
 }
 
-const TreeView = (...TreeItems) => new ZikoUITreeView(...TreeItems);
+const TreeView = ({displayNumbering = true}={},...TreeItems) => new ZikoUITreeView({displayNumbering},...TreeItems);
 
 export{
     ZikoUITreeView,

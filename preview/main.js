@@ -1,19 +1,9 @@
-import {h1, tags} from "ziko"
 // import { FileBasedRouting } from "ziko";
-// // import {Collapsible} from "ziko-ui";
-// // import {h1} from "ziko"
-
 // FileBasedRouting(import.meta.glob("./src/pages/**/*.js"))
-
-// // const pages = import.meta.glob("./src/pages/**/*.js")
-// // console.log(Object.keys(pages))
 
 import {TreeItem, TreeView} from "zextra/ui/tree-view"
 
-// globalThis.treeItem = TreeItem({label : "Label"})
-
-globalThis.Test = TreeItem({label : " Test .... "}),
-globalThis.tv = TreeView(
+const Tree = TreeView({displayNumbering : true},
     TreeItem({ label : "Zikojs Core"},
         TreeItem({ label : "Math"},
             TreeItem({ label : "Functions", href : "#"}),
@@ -44,7 +34,7 @@ globalThis.tv = TreeView(
         TreeItem({label : "Static Site Generation"}),
         TreeItem({label : "Client Side Hydration"}),
     ),
-    TreeItem({label : "Mdzjs"}),
+    TreeItem({label : "Mdzjs", href: 'https://github.com/zakarialaoui10/mdzjs'}),
     TreeItem({label : "Ziko-Wrapper"},
         TreeItem({label : "Hyperscript-Based"},
             TreeItem({label : "Vanjs"}),
@@ -52,10 +42,9 @@ globalThis.tv = TreeView(
         TreeItem({label : "JSX-Based"},
             TreeItem({label : "React"}),
             TreeItem({label : "Preact"}),
-            Test,
             TreeItem({label : "Solid"})
         ),
-        TreeItem({label : "mplate-Based"},
+        TreeItem({label : "Template-Based"},
             TreeItem({label : "Vue"}),
             TreeItem({label : "Svelte"}),
         ),
@@ -78,6 +67,9 @@ globalThis.tv = TreeView(
             TreeItem({label : "P5.wrapper "}),
             TreeItem({label : "Ziko-lottie "}),
             TreeItem({label : "Ziko-keyframes "}),
+            TreeItem({label : "Ziko-pdf "}),
+            TreeItem({label : "Ziko-tsl "}),
+
     ),
     TreeItem({label : "Transformers"},
             TreeItem({label : "Xlsx-Transformer"}),
@@ -95,29 +87,4 @@ globalThis.tv = TreeView(
     display : 'inline-block'
 })
 
-function getNumberingString(treeView, targetItem) {
-    if (!treeView.isTreeView) return null;
-    
-    function findPath(items, target, currentPath = []) {
-        for (let i = 0; i < items.length; i++) {
-            const item = items[i];
-            if (!item.isTreeItem) continue;
-            
-            const newPath = [...currentPath, i + 1];
-            
-            if (item === target) {
-                return newPath.join('.');
-            }
-            
-            if (item.items && item.items.length > 0) {
-                const result = findPath(item.items, target, newPath);
-                if (result) return result;
-            }
-        }
-        return null;
-    }
-    
-    return findPath(treeView.items, targetItem);
-}
-
-globalThis.getNumberingString = getNumberingString
+globalThis.Tree = Tree

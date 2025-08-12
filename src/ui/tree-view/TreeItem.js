@@ -21,7 +21,7 @@ class ZikoUITreeItem extends ZikoUIElement{
             marginRight: '6px',
             transition: 'transform 0.15s ease'
         })
-        this.label = href ? tags.a({href}, label) :  tags.span(label);
+        this.label = href ? tags.a({href, target : href.startsWith('#') ? '': '_blank'}, label) :  tags.span(label);
         this.numbering = tags.span({}, '')
         this.label_container = tags.div(
             this.arrow, 
@@ -82,44 +82,12 @@ class ZikoUITreeItem extends ZikoUIElement{
         // To Check
         return super.parent.parent
     }
-    level(){
-        return {
-           h :  this.parent.items.findIndex(n=>n == this) + 1,
-           v : this.getLevel()
-        }
-    }
-    getLevel() {
-        let level = 1;
-        let current = this.parent;
-        while (current && current.isTreeItem && current.isTreeItem()) {
-            level++;
-            current = current.parent;
-        }        
-        return level;
-    }
     isOpened(){
         return this.cache.isOpened;
     }
     hasItems(){
         return this.items_container?.items.length > 0
     }
-    getNumbering() {
-    const numbers = [];
-    // start from this node
-    let node = this;
-    while (node) {
-      const parent = node.parent;           // likely the UL container
-      if (!parent || !Array.isArray(parent.items)) break;
-      const idx = parent.items.indexOf(node);
-      if (idx === -1) break;                // can't find this node among parent's items -> stop
-      // prepend the 1-based index
-      numbers.unshift(idx + 1);
-      // move up: parent.parent should be the LI (the owner TreeItem) or the TreeView root container
-      node = parent.parent;
-    }
-
-    return numbers.length ? numbers.join('.') : '';
-  }
 }
 
 const TreeItem = ({label, href, opened} = {}, ...items) => new ZikoUITreeItem({label, href, opened}, ...items);
