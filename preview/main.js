@@ -2,6 +2,7 @@
 // FileBasedRouting(import.meta.glob("./src/pages/**/*.js"))
 
 import {TreeItem, TreeView} from "zextra/ui/tree-view"
+import 'zextra/style'
 
 const Tree = TreeView({displayNumbering : true},
     TreeItem({ label : "Zikojs Core"},
@@ -97,11 +98,16 @@ const Tree = TreeView({displayNumbering : true},
     ),
     TreeItem({label : "Kit"},
             // TreeItem({label : "9.1 Xlsx-Transformer"}),
-    )
+    ).style({
+        
+    })
 ).style({
     color : 'darkblue',
     border : '2px darkblue solid',
-    display : 'inline-block'
+    display : 'inline-block',
+    // background : 'var(--zextra-color-primary)',
+    color : 'var(--zextra-color-primary)',
+    fontSize : 'var(--zextra-large-font)'
 })
 
-globalThis.Tree = Tree
+// globalThis.Tree = Tree

@@ -1,0 +1,45 @@
+:root {
+  /* Colors */
+  --zextra-color-primary: #1976d2;
+  --zextra-color-secondary: #9c27b0;
+  --zextra-color-success: #2e7d32;
+  --zextra-color-error: #d32f2f;
+  --zextra-color-warning: #ed6c02;
+  --zextra-color-delete: #f44336;
+
+  /* Sizes */
+  --zextra-small-padding: 4px 10px;
+  --zextra-small-font: 0.75rem;
+  --zextra-medium-padding: 6px 16px;
+  --zextra-medium-font: 0.875rem;
+  --zextra-large-padding: 8px 22px;
+  --zextra-large-font: 1rem;
+
+  /* Border radius */
+  --zextra-border-radius: 4px;
+
+  /* Transition durations */
+  --zextra-transition-duration: 0.3s;
+  --zextra-transition-timing: ease;
+
+  /* Shadow / elevation */
+  --zextra-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Hover/active  */
+  --zextra-hover-brightness: 0.9;
+
+  /* Ripple / overlay */
+  --zextra-ripple-color: rgba(255, 255, 255, 0.5);
+
+  /* Text transform  */
+  --zextra-text-transform: uppercase;
+
+  /* Letter spacing */
+  --zextra-letter-spacing: 0.02857em;
+
+  /* Line height */
+  --zextra-line-height: 1.75;
+
+  /* Disabled state opacity */
+  --zextra-disabled-opacity: 0.5;
+}
