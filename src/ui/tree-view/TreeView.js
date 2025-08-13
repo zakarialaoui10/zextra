@@ -1,9 +1,10 @@
 import {ZikoUIElement} from 'ziko'
 class ZikoUITreeView extends ZikoUIElement{
-    constructor({displayNumbering},...TreeItems){
+    constructor({displayNumbering, expandAll},...TreeItems){
         super('ul','tree-view')
         Object.assign(this.cache,{
-            displayNumbering
+            displayNumbering,
+            expandAll
         })
         this.setAttr({
             role : 'tree',
