@@ -1,15 +1,15 @@
 {
   "name": "zextra",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
   "exports": {
-    "./style":{
-      "import" : "./src/ui/__style__/index.css"
+    "./style": {
+      "import": "./src/ui/__style__/index.css"
     },
     "./ui/*": {
-      "import" : "./src/ui/*/index.js"
+      "import": "./src/ui/*/index.js"
     },
     ".": "./dist/zextra.mjs",
     "./ui": "./dist/zextra-ui.mjs",
@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "mdzjs": "^0.10.0",
-    "ziko": "^0.36.0",
+    "ziko": "^0.36.2",
     "ziko-server": "^0.9.1",
     "ziko-wrapper": "^0.28.0"
   }
