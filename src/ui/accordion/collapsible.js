@@ -1,9 +1,9 @@
 import{
-    ZikoUIElement,
+    UIElement,
     html,
     watchAttr
 } from "ziko"
-class ZikoUICollapbsible extends ZikoUIElement{
+class ZikoUICollapbsible extends UIElement{
     constructor(summary,content,openIcon="😁", closeIcon=openIcon){
         super("details","Collapsible", {useDefaultStyle : true})
         Object.assign(this.cache,{

@@ -1,5 +1,5 @@
-import { ZikoUIElement } from "ziko";
-class ZikoSvgElement extends ZikoUIElement{
+import { UIElementrom "ziko";
+class ZikoSvgElement extends UIElement
   constructor(type) {
     super()
     Object.assign(this.cache,{

@@ -1,5 +1,5 @@
-import { ZikoUIElement } from "ziko";
-class __ZikoUISplitter__ extends ZikoUIElement{
+import { UIElement } from "ziko";
+class __ZikoUISplitter__ extends UIElement{
     constructor(flexDirection, resizerCursor, resizerProp){
         super("div", "Splitter")
         Object.assign(this.cache,{
@@ -14,7 +14,7 @@ class __ZikoUISplitter__ extends ZikoUIElement{
             border: "2px solid #333",
             overflow: "hidden"
         })
-        this.resizer = new ZikoUIElement("div", "resizer").style({
+        this.resizer = new UIElement("div", "resizer").style({
             [this.cache.resizerProp]:"5px",
             backgroundColor: "gold",
             cursor: this.cache.resizerCursor,

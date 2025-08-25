@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "mdzjs": "^0.10.0",
-    "ziko": "^0.36.2",
+    "ziko": "^0.42.0",
     "ziko-server": "^0.9.1",
     "ziko-wrapper": "^0.28.0"
   }

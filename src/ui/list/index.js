@@ -1,5 +1,5 @@
-import { ZikoUIElement } from "ziko"
-class ZikoUIList extends ZikoUIElement{
+import { UIElement } from "ziko"
+class ZikoUIList extends UIElement{
     constructor({ type = 'ol' } = {}, ...items){
         super(type)
     }

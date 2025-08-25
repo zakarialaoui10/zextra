@@ -1,5 +1,5 @@
 import {
-    ZikoUIElement,
+    UIElement,
     ZikoUIFlex
 } from "ziko"
 class ZikoUIMenu3d extends ZikoUIFlex{
@@ -107,7 +107,7 @@ class ZikoUIMenu3d extends ZikoUIFlex{
     }
     setupCover(){
         if( this.cover ) this.cover.element.parentNode.removeChild( this.cover.element );
-                this.cover=new ZikoUIElement("div","div").style({
+                this.cover=new UIElement("div","div").style({
                     position:"absolute",
 					display:"block",
 					width:"100%",

@@ -1,6 +1,6 @@
-import { ZikoUIElement, } from "ziko/ui";
+import { UIElement } from "ziko/ui";
 
-class ZextraUIButton extends ZikoUIElement{
+class ZextraUIButton extends UIElement{
     constructor(){
         super('button', 'zextra-button')
     }

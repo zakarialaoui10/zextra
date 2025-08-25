@@ -1,9 +1,9 @@
 import {
-    ZikoUIElement,
+    UIElement,
     html,
     text
 } from "ziko"
-class ZikoUIBreadcrumbs extends ZikoUIElement{
+class ZikoUIBreadcrumbs extends UIElement{
     constructor(...items){
         super("ul", "Breadcrumbs")
         Object.assign(this.cache,{

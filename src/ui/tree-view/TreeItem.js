@@ -1,5 +1,5 @@
-import { ZikoUIElement, tags } from "ziko/ui"
-class ZikoUITreeItem extends ZikoUIElement{
+import { UIElement, tags } from "ziko/ui"
+class ZikoUITreeItem extends UIElement{
     constructor({label = '', opened = false, href } = {}, ...items){
         super('li','tree-item')
         Object.assign(this.cache,{

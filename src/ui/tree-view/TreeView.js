@@ -1,5 +1,5 @@
-import {ZikoUIElement} from 'ziko'
-class ZikoUITreeView extends ZikoUIElement{
+import {UIElement} from 'ziko'
+class ZikoUITreeView extends UIElement{
     constructor({displayNumbering, expandAll},...TreeItems){
         super('ul','tree-view')
         Object.assign(this.cache,{

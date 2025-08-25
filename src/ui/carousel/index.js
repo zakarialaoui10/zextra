@@ -3,7 +3,7 @@ import {
   Section
 } from "ziko"
 class ZikoUICarousel extends ZikoUIFlex{
-    constructor(...ZikoUIElement){
+    constructor(...UIElement){
         super()
         this.style({
             position:"relative",
@@ -12,7 +12,7 @@ class ZikoUICarousel extends ZikoUIFlex{
             userSelect:"none"
         });
         this.horizontal("space-around",0);
-        this.track = Section(...ZikoUIElement).style({ display: "inline-flex" });
+        this.track = Section(...UIElement).style({ display: "inline-flex" });
         this.track.size(this.track.children.length * 100 + "vw");
         this.track.setTarget(this);
         this.track.items.map((n) =>
@@ -49,5 +49,5 @@ class ZikoUICarousel extends ZikoUIFlex{
         return true;
       }
 }
-const Carousel=(...ZikoUIElement)=>new ZikoUICarousel(...ZikoUIElement);
+const Carousel=(...UIElement)=>new ZikoUICarousel(...UIElement);
 export {Carousel}

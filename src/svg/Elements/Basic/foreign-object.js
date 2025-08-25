@@ -1,7 +1,7 @@
 import ZikoSvgElement from "../ZikoSvgElement.js";
 import { Flex } from "ziko"
 class ZikoSvgForeignObject extends ZikoSvgElement{
-    constructor(x=0,y=0,w="100%",h="100%",...ZikoUIElement){
+    constructor(x=0,y=0,w="100%",h="100%",...UIElement){
       super("foreignObject")
       this.items=[];
       this.element=document?.createElementNS(
@@ -20,12 +20,12 @@ class ZikoSvgForeignObject extends ZikoSvgElement{
         this.element.etAttribute("height",h)
         return this;
     }
-    add(...ZikoUIElement){
-      this.container.append(...ZikoUIElement);
+    add(...UIElement){
+      this.container.append(...UIElement);
       return this;
       }
-    remove(...ZikoUIElement){
-      this.container.append(...ZikoUIElement);
+    remove(...UIElement){
+      this.container.append(...UIElement);
       return this;   
       }
   } 
