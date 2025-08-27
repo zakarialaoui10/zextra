@@ -1,7 +1,7 @@
 import {UIElement} from 'ziko'
 class ZikoUITreeView extends UIElement{
     constructor({displayNumbering, expandAll},...TreeItems){
-        super('ul','tree-view')
+        super({element : 'ul',name : 'tree-view'})
         Object.assign(this.cache,{
             displayNumbering,
             expandAll

@@ -1,10 +1,11 @@
 import {
     UIElement,
-    ZikoUIFlex
+    ZikoUIFlex,
+    tags
 } from "ziko"
-class ZikoUIMenu3d extends ZikoUIFlex{
+class UIMeny extends ZikoUIFlex{
     constructor(controller, content){
-        super("div", "menu3d")
+        super('div')
         this.controller = controller;
         this.content = content;
         this.cover = null;
@@ -107,7 +108,7 @@ class ZikoUIMenu3d extends ZikoUIFlex{
     }
     setupCover(){
         if( this.cover ) this.cover.element.parentNode.removeChild( this.cover.element );
-                this.cover=new UIElement("div","div").style({
+                this.cover = tags.div().style({
                     position:"absolute",
 					display:"block",
 					width:"100%",
@@ -235,17 +236,16 @@ class ZikoUIMenu3d extends ZikoUIFlex{
             return this;
         }
 }
-const menu3d = (controller, content) => new ZikoUIMenu3d(controller, content);
-globalThis.menu3d = menu3d;
+const Meny = (controller, content) => new UIMeny(controller, content);
 export{
-    menu3d,
-    ZikoUIMenu3d
+    Meny,
+    UIMeny
 }
 
 
 /*
 
-a = menu3d(Flex(text("Menu")), Flex(text("Content")))
+a = Meny(Flex(text("Menu")), Flex(text("Content")))
   .size("80vw", "50vh")
   .style({ userSelect: "none" });
 a.onOpen((e) => console.log(e));

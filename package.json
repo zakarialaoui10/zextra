@@ -8,8 +8,12 @@
     "./style": {
       "import": "./src/ui/__style__/index.css"
     },
+    "./style/*" : "./src/ui/*/index.css",
     "./ui/*": {
       "import": "./src/ui/*/index.js"
+    },
+    "./wrappers/*": {
+      "import": "./wrappers/*/index.js"
     },
     ".": "./dist/zextra.mjs",
     "./ui": "./dist/zextra-ui.mjs",
@@ -47,9 +51,6 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "mdzjs": "^0.10.0",
-    "ziko": "^0.42.0",
-    "ziko-server": "^0.9.1",
-    "ziko-wrapper": "^0.28.0"
+    "ziko": "^0.42.1"
   }
 }
