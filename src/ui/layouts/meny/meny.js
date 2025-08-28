@@ -1,21 +1,17 @@
 import { UIElement } from 'ziko/ui'
+import { add_vendor_prefix } from 'ziko/ui/utils/index.js'
 import { 
-    prefix,
     add_class,
     remove_class
  } from './utils/index.js'
 import {
 	setup_positions
 } from './setup/index.js'
-class UIMenyWrapper extends UIElement {
-    static POSITION_T = 'top';
-	static POSITION_R = 'right';
-	static POSITION_B = 'bottom';
-	static POSITION_L = 'left';
-    constructor(meny, contents, {
+class UIMeny extends UIElement {
+    constructor(menu, contents, {
 			width= 300,
 			height= 300,
-			position= UIMenyWrapper.POSITION_L,
+			position= UIMeny.POSITION_L,
 			threshold= 40,
 			angle= 30,
 			overlap= 6,
@@ -24,19 +20,19 @@ class UIMenyWrapper extends UIElement {
 			gradient= 'rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.65) 100%)',		
 	}= {}
     ){
-        super({element : 'div', name : 'meny-wrapper'})
-        this.meny = meny.style({
+        super({element : 'div', name : 'meny'})
+        this.menu = menu.style({
 				opacity : 0
 		});
-		add_class(this.meny.element, 'zextra-meny')
+		add_class(this.menu.element, 'zextra-meny')
         this.contents = contents
         this.cover = null
         this.dom = {
-            menu : meny.element,
+            menu : menu.element,
             contents : contents.element,
             wrapper : this.element
         }
-		this.append(meny, contents)
+		this.append(menu, contents)
         Object.assign(this.cache, {
 			config : {
 				width,
@@ -73,8 +69,8 @@ class UIMenyWrapper extends UIElement {
     setupWrapper() {
 		add_class(this.dom.wrapper, `zextra-meny-${this.cache.config.position}`);
 		this.originalStyles.wrapper = this.dom.wrapper.style.cssText;
-		this.dom.wrapper.style[prefix('perspective')] = '800px';
-		this.dom.wrapper.style[prefix('perspectiveOrigin')] = this.cache.transform.contents_origin;
+		this.dom.wrapper.style[add_vendor_prefix('perspective')] = '800px';
+		this.dom.wrapper.style[add_vendor_prefix('perspectiveOrigin')] = this.cache.transform.contents_origin;
 	}
 	setupCover() {
 		if(this.dom.cover) this.dom.cover.parentNode.removeChild(this.dom.cover);
@@ -89,28 +85,28 @@ class UIMenyWrapper extends UIElement {
 			zIndex: '1000',
 			visibility: 'hidden',
 			opacity: '0',
-			[prefix('transition')] : `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`
+			[add_vendor_prefix('transition')] : `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`
 
 		});
 		this.dom.contents.appendChild(this.dom.cover);
 	}
 	setupMenu() {
 		switch(this.cache.config.position) {
-			case UIMenyWrapper.POSITION_T: Object.assign(this.dom.menu.style, {
+			case 'top': Object.assign(this.dom.menu.style, {
 				width : '100%',
 				height : `${this.cache.config.height}px`
 			}); break;
-			case UIMenyWrapper.POSITION_R: Object.assign(this.dom.menu.style, {
+			case 'right': Object.assign(this.dom.menu.style, {
 				right : '0',
 				width : `${this.cache.config.width}px`,
 				height : '100%'
 			}); break;
-			case UIMenyWrapper.POSITION_B: Object.assign(this.dom.menu.style, {
+			case 'bottom': Object.assign(this.dom.menu.style, {
 				bottom : '0',
 				width : '100%',
 				height : `${this.cache.config.height}px`
 			}); break;
-			case UIMenyWrapper.POSITION_L: Object.assign(this.dom.menu.style,{
+			case 'left': Object.assign(this.dom.menu.style,{
 				width : `${this.cache.config.width}px`,
 				height : '100%'
 			}); break;
@@ -121,17 +117,17 @@ class UIMenyWrapper extends UIElement {
 			display: 'block',
 			zIndex: '1'
 		});
-		this.dom.menu.style[prefix('transform')] = this.cache.transform.menu_closed;
-		this.dom.menu.style[prefix('transformOrigin')] = this.cache.transform.menu_origin;
-		this.dom.menu.style[prefix('transition')] = `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`;
+		this.dom.menu.style[add_vendor_prefix('transform')] = this.cache.transform.menu_closed;
+		this.dom.menu.style[add_vendor_prefix('transformOrigin')] = this.cache.transform.menu_origin;
+		this.dom.menu.style[add_vendor_prefix('transition')] = `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`;
 	}
 	setupContents() {
 		const style = this.dom.contents.style;
 		this.originalStyles.contents = style.cssText;
 		Object.assign(this.dom.contents.style,{
-			[prefix('transform')] : this.cache.transform.contents_closed,
-			[prefix('transformOrigin')] : this.cache.transform.contents_origin,
-			[prefix('transition')] : `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`
+			[add_vendor_prefix('transform')] : this.cache.transform.contents_closed,
+			[add_vendor_prefix('transformOrigin')] : this.cache.transform.contents_origin,
+			[add_vendor_prefix('transition')] : `all ${this.cache.config.transitionDuration} ${this.cache.config.transitionEasing}`
 		})
 	}
 	open() {
@@ -141,10 +137,10 @@ class UIMenyWrapper extends UIElement {
 			this.dom.cover.style.height = `${this.dom.contents.scrollHeight}px`;
 			this.dom.cover.style.visibility = 'visible';
 			this.dom.cover.style.opacity = '1';
-			this.dom.contents.style[prefix('transform')] = this.cache.transform.contents_opened;
-			this.dom.menu.style[prefix('transform')] = this.cache.transform.menu_opened;
+			this.dom.contents.style[add_vendor_prefix('transform')] = this.cache.transform.contents_opened;
+			this.dom.menu.style[add_vendor_prefix('transform')] = this.cache.transform.menu_opened;
 
-			this.meny.style({
+			this.menu.style({
 				opacity : 1
 			})
 		}
@@ -155,10 +151,10 @@ class UIMenyWrapper extends UIElement {
 			remove_class(this.dom.wrapper, 'zextra-meny-active');
 			this.dom.cover.style.visibility = 'hidden';
 			this.dom.cover.style.opacity = '0';
-			this.dom.contents.style[prefix('transform')] = this.cache.transform.contents_closed;
-			this.dom.menu.style[prefix('transform')] = this.cache.transform.menu_closed;
+			this.dom.contents.style[add_vendor_prefix('transform')] = this.cache.transform.contents_closed;
+			this.dom.menu.style[add_vendor_prefix('transform')] = this.cache.transform.menu_closed;
 
-			this.meny.style({
+			this.menu.style({
 				opacity : 0
 			})
 		}
@@ -172,8 +168,8 @@ class UIMenyWrapper extends UIElement {
 	}
     
 }
-const MenyWrapper = (meny, contents, options) => new UIMenyWrapper(meny, contents, options)
+const Meny = (menu, contents, options) => new UIMeny(menu, contents, options)
 export{
-    UIMenyWrapper,
-    MenyWrapper
+    UIMeny,
+    Meny
 }

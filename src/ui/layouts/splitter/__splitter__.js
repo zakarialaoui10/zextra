@@ -1,7 +1,7 @@
 import { UIElement } from "ziko";
-class __ZikoUISplitter__ extends UIElement{
+class __UISplitter__ extends UIElement{
     constructor(flexDirection, resizerCursor, resizerProp){
-        super("div", "Splitter")
+        super({element : "div", name : "splitter"})
         Object.assign(this.cache,{
             isResizing : false,
             flexDirection,
@@ -58,5 +58,5 @@ class __ZikoUISplitter__ extends UIElement{
     }
 }
 export{
-    __ZikoUISplitter__
+    __UISplitter__
 }

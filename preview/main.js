@@ -2,8 +2,8 @@
 // FileBasedRouting(import.meta.glob("./src/pages/**/*.js"))
 
 import {TreeItem, TreeView} from "zextra/ui/tree-view"
-import {MenyWrapper} from 'zextra/ui/meny'
-import 'zextra/style/meny'
+import {Meny} from 'zextra/ui/layouts/meny'
+import 'zextra/style/layouts/meny'
 import { tags } from "ziko"
 import 'zextra/style'
 
@@ -118,17 +118,19 @@ globalThis.Tree = Tree
 // globalThis.m = Meny(Tree, tags.section('jjdj')).size("80vw", "50vh")
 
 
-globalThis.m = MenyWrapper(
+globalThis.m = Meny(
     Tree,
     tags.section('Content').style({
         // width : '200px',
         height : '100%',
-        border : '1px blue solid'
+        background : 'gray'
+        // border : '1px blue solid'
     }),
     {
         position : 'left'
     }
 ).style({
-    height : '400px',
-    width : '400px'
+    margin : 0,
+    height : '100vh',
+    width : '100vw'
 })

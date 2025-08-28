@@ -1,5 +1,5 @@
-import { __ZikoUISplitter__ } from "./__ZikoUISplitter__.js";
-class ZikoUIVerticalSplitter extends __ZikoUISplitter__{
+import { __UISplitter__ } from "./__splitter__.js";
+class UIVSplitter extends __UISplitter__{
     constructor(topPane, bottomPane){
         super("column", "ns-resize", "height")
         this.topPane = topPane.style({
@@ -33,8 +33,8 @@ class ZikoUIVerticalSplitter extends __ZikoUISplitter__{
         return true;
     }
 }
-const vSplitter=(topPane, bottomPane)=>new ZikoUIVerticalSplitter(topPane, bottomPane);
+const VSplitter=(topPane, bottomPane)=>new UIVSplitter(topPane, bottomPane);
 export{
-    ZikoUIVerticalSplitter,
-    vSplitter
+    UIVSplitter,
+    VSplitter
 }

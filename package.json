@@ -8,7 +8,7 @@
     "./style": {
       "import": "./src/ui/__style__/index.css"
     },
-    "./style/*" : "./src/ui/*/index.css",
+    "./style/*": "./src/ui/*/index.css",
     "./ui/*": {
       "import": "./src/ui/*/index.js"
     },
@@ -51,6 +51,6 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "ziko": "^0.42.1"
+    "ziko": "^0.44.0"
   }
 }

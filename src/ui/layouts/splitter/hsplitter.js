@@ -1,5 +1,5 @@
-import { __ZikoUISplitter__ } from "./__ZikoUISplitter__.js";
-class ZikoUIHorizontalSplitter extends __ZikoUISplitter__{
+import { __UISplitter__ } from "./__splitter__.js";
+class UIHSplitter extends __UISplitter__{
     constructor(leftPane, rightPane){
         super("row", "ew-resize", "width")
         this.leftPane = leftPane.style({
@@ -33,8 +33,8 @@ class ZikoUIHorizontalSplitter extends __ZikoUISplitter__{
         return true;
       }
 }
-const hSplitter=(leftPane, rightPane)=>new ZikoUIHorizontalSplitter(leftPane, rightPane);
+const HSplitter=(leftPane, rightPane)=>new UIHSplitter(leftPane, rightPane);
 export{
-    ZikoUIHorizontalSplitter,
-    hSplitter
+    UIHSplitter,
+    HSplitter
 }
