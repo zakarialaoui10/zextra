@@ -1,4 +1,4 @@
-import { UIElement } from "ziko";
+import { UIElement, tags } from "ziko";
 class __UISplitter__ extends UIElement{
     constructor(flexDirection, resizerCursor, resizerProp){
         super({element : "div", name : "splitter"})
@@ -14,9 +14,9 @@ class __UISplitter__ extends UIElement{
             border: "2px solid #333",
             overflow: "hidden"
         })
-        this.resizer = new UIElement("div", "resizer").style({
+        this.resizer = tags.div().style({
             [this.cache.resizerProp]:"5px",
-            backgroundColor: "gold",
+            backgroundColor: "var(--zextra-resizer-color)",
             cursor: this.cache.resizerCursor,
             touchAction: "none", 
         });

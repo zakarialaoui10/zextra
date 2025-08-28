@@ -1,21 +1,23 @@
 import { __UISplitter__ } from "./__splitter__.js";
+
+// To Do : Add Swipe Right / Left
 class UIHSplitter extends __UISplitter__{
-    constructor(leftPane, rightPane){
+    constructor(left_pane, right_pane){
         super("row", "ew-resize", "width")
-        this.leftPane = leftPane.style({
+        this.left_pane = left_pane.style({
             width:"50%",
             flexGrow: 1,
             overflow: "hidden"
         });
-        this.rightPane = rightPane.style({
+        this.right_pane = right_pane.style({
             width:"50%",
             flexGrow: 1,
             overflow: "hidden"
         });
         this.element?.append(
-            this.leftPane.element,
+            this.left_pane.element,
             this.resizer.element,
-            this.rightPane.element
+            this.right_pane.element
         );
         this.onPtrMove(e=>{
             if (!this.cache.isResizing) return;
@@ -25,15 +27,15 @@ class UIHSplitter extends __UISplitter__{
             let newRightPaneWidth = 100 - newLeftPaneWidth;
             if (newLeftPaneWidth < 0) newLeftPaneWidth = 0;
             if (newRightPaneWidth < 0) newRightPaneWidth = 0;
-            this.leftPane.element.style.width = `${newLeftPaneWidth}%`;
-            this.rightPane.element.style.width = `${newRightPaneWidth}%`;
+            this.left_pane.element.style.width = `${newLeftPaneWidth}%`;
+            this.right_pane.element.style.width = `${newRightPaneWidth}%`;
         })
     }
-    get isHorizontalSplitter(){
+    get isHSplitter(){
         return true;
       }
 }
-const HSplitter=(leftPane, rightPane)=>new UIHSplitter(leftPane, rightPane);
+const HSplitter=(left_pane, right_pane)=>new UIHSplitter(left_pane, right_pane);
 export{
     UIHSplitter,
     HSplitter

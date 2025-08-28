@@ -1,21 +1,23 @@
 import { __UISplitter__ } from "./__splitter__.js";
+
+// To Do : Add Swipe Top / Bottom 
 class UIVSplitter extends __UISplitter__{
-    constructor(topPane, bottomPane){
+    constructor(top_pane, bottom_pane){
         super("column", "ns-resize", "height")
-        this.topPane = topPane.style({
+        this.top_pane = top_pane.style({
             height:"50%",
             flexGrow: 1,
             overflow: "hidden"
         });
-        this.bottomPane = bottomPane.style({
+        this.bottom_pane = bottom_pane.style({
             height:"50%",
             flexGrow: 1,
             overflow: "hidden"
         });
         this.element?.append(
-            this.topPane.element,
+            this.top_pane.element,
             this.resizer.element,
-            this.bottomPane.element
+            this.bottom_pane.element
         );
         this.onPtrMove(e=>{
             if (!this.cache.isResizing) return;
@@ -25,15 +27,15 @@ class UIVSplitter extends __UISplitter__{
             let newBottomPaneHeight = 100 - newTopPaneHeight;
             if (newTopPaneHeight < 0) newTopPaneHeight = 0;
             if (newBottomPaneHeight < 0) newBottomPaneHeight = 0;
-            this.topPane.element.style.height = `${newTopPaneHeight}%`;
-            this.bottomPane.element.style.height = `${newBottomPaneHeight}%`;
+            this.top_pane.element.style.height = `${newTopPaneHeight}%`;
+            this.bottom_pane.element.style.height = `${newBottomPaneHeight}%`;
         })
     }
-    get isHorizontalSplitter(){
+    get isVSplitter(){
         return true;
     }
 }
-const VSplitter=(topPane, bottomPane)=>new UIVSplitter(topPane, bottomPane);
+const VSplitter=(top_pane, bottom_pane)=>new UIVSplitter(top_pane, bottom_pane);
 export{
     UIVSplitter,
     VSplitter

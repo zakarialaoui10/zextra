@@ -42,4 +42,7 @@
 
   /* Disabled state opacity */
   --zextra-disabled-opacity: 0.5;
+
+
+  --zextra-resizer-color : green;
 }

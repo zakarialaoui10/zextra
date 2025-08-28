@@ -1,3 +1,16 @@
+import 'zextra/style'
+import { HSplitter } from "zextra/ui/layouts";
+import {tags} from 'ziko'
+
+HSplitter(
+    tags.section('Top Panel'),
+    tags.section('Bottom Panel')
+).style({
+    width : '90vw',
+    height : '90vh',
+    margin : 'auto'
+})
+
 // globalThis.S=SPA({
 //    target : document.querySelector("#app"),
 //    wrapper : Section().style({
