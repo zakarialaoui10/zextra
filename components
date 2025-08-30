@@ -1,27 +1,56 @@
+Buttons 
+ - Button
+ - Fab 
+ - IconButton
+
+Inputs 
+ - Autocomplete
+ - Rating
+ - Joyestick ( Svg )
+ - InpOTP (OTP, Separator, Groupe)
+ - InpFile
+ - InpNumber
+ - InpColor
+
+
+Text 
+ - TypeWritter
+ - ToggleText 
+ - MarqueeText
+
+Feedback
+ - Alert 
+ - Badge
+ - Modal 
+ - Popover
+ - Tooltip
+ - Toast
+ - Progress
+ - Skeleton
+
+Surface
+ - Collapsible 
+ - Accordion
+
+Navigation
+ - Pagintaion 
+ - Breadcrumbs
+ - Stepper
+ - Tabs
+ - TreeView
+
 Layouts 
  - Meny 
  - Stack 
  - Split 
-Modal
+
 Carousels
  - Slider
  - Swipper
- - Carousel
-Alert 
-Text 
- - TypeWritter
-Buttons 
+ - Carousel 
+ - Coverflow
 
-
-Collapsible
-Accordion 
-Tabs  
-Menu 
-
-
-Alert ( Aside )
-Badge
-
-Stepper 
-Popover
-Tooltip
+Data
+ - Table 
+ - Timeline
+ - TreeMap

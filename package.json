@@ -1,16 +1,16 @@
 {
   "name": "zextra",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
   "exports": {
     "./style": {
-      "import": "./src/ui/__style__/index.css"
+      "import": "./src/__style__/index.css"
     },
-    "./style/*": "./src/ui/*/index.css",
-    "./ui/*": {
-      "import": "./src/ui/*/index.js"
+    "./style/*": "./src/*/index.css",
+    "./*": {
+      "import": "./src/*/index.js"
     },
     "./wrappers/*": {
       "import": "./wrappers/*/index.js"
@@ -51,6 +51,6 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "ziko": "^0.44.0"
+    "ziko": "^0.45.0"
   }
 }

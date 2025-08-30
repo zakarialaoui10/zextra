@@ -1,8 +1,8 @@
 // import { FileBasedRouting } from "ziko";
 // FileBasedRouting(import.meta.glob("./src/pages/**/*.js"))
 
-import {TreeItem, TreeView} from "zextra/ui/tree-view"
-import {Meny} from 'zextra/ui/layouts/meny'
+import {TreeItem, TreeView} from "zextra/tree-view"
+import {Meny} from 'zextra/layouts/meny'
 import 'zextra/style/layouts/meny'
 import { tags } from "ziko"
 import 'zextra/style'

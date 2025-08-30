@@ -1,5 +1,7 @@
 import { UIElement } from 'ziko/ui'
 import { add_vendor_prefix } from 'ziko/ui/utils/index.js'
+import { register_click_away_event } from 'ziko/events/custom-events/click-away.js'
+import { register_swipe_event } from 'ziko/events/custom-events/swipe.js'
 import { 
     add_class,
     remove_class
@@ -32,6 +34,21 @@ class UIMeny extends UIElement {
             contents : contents.element,
             wrapper : this.element
         }
+		register_click_away_event(this.dom.menu)
+		this.dom.menu.addEventListener('clickaway', ()=> this.close())
+
+		register_swipe_event(this.dom.wrapper)
+		this.dom.wrapper.addEventListener('swiperight', ()=> {
+			console.log(this.isOpen())
+			setTimeout(()=>this.open(), 0)
+			console.log('Open ...')
+		})
+		this.dom.wrapper.addEventListener('dblclick', ()=> this.toggle())
+		this.dom.wrapper.style.border = '2px red solid'
+		this.style({
+			userSelect: 'none',
+      		touchAction: 'none'
+		})
 		this.append(menu, contents)
         Object.assign(this.cache, {
 			config : {
