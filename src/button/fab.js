@@ -1,6 +1,6 @@
 import {UIElement, map} from 'ziko'
 class UIFab extends UIElement{
-    constructor(text, x, y){
+    constructor({x = 0, y = 0, text, icon} = {}){
         super({element : 'button', name : 'zextra_fab'})
         this.element.innerText = text
         this.style({
@@ -18,7 +18,7 @@ class UIFab extends UIElement{
     }
 }
 
-const Fab = (text, x, y) => new UIFab(text, x, y)
+const Fab = ({x = 0, y = 0, text, icon}) => new UIFab({x, y, text, icon})
 export{
     Fab, 
     UIFab
