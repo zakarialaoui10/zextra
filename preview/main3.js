@@ -1,13 +1,27 @@
-import { Collapsible } from "zextra/surface/collapsible";
+import { Collapsible, Accordion } from "zextra/surface";
 import 'zextra/style'
 import { tags } from "ziko/ui";
 
-globalThis.c = Collapsible(
-    'Summary', 
+globalThis.c1 = Collapsible(
+    'Summary 1', 
     tags.pre({},`
         ddkd
         jdjd
         djdjd
         jdjdo
         `)
+)
+globalThis.c2 = Collapsible(
+    'Summary 2', 
+    tags.pre({},`
+        ddkd
+        jdjd
+        djdjd
+        jdjdo
+        `)
+)
+
+globalThis.a=Accordion({},
+    c1,
+    c2
 )
