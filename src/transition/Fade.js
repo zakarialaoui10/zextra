@@ -3,17 +3,16 @@ import { UIElement } from "ziko/ui";
 class UIFade extends UIElement {
     constructor({ appear = true, ease_in = 'ease-in-out', ease_out = 'ease-in-out', t_in = '300ms', t_out = '300ms'} = {}, content) {
         super({ element: 'div', name: 'fade' });
-        this.append(content);
-        this.style({ opacity: 0, display: 'none' });
-        if(appear) this.fadeIn();
         Object.assign(this.cache,{
             ease_in,
             ease_out,
             t_in,
             t_out
         })
+        this.append(content);
+        this.style({ opacity: 0, display: 'none' });
+        if(appear) this.fadeIn();
     }
-
     fadeIn(t = this.cache.t_in, ease = this.cache.ease_in) {
         if(typeof t === 'number') t+='ms'
         this.element.style.display = 'block';
@@ -23,6 +22,7 @@ class UIFade extends UIElement {
             opacity: 1,
             transition : `opacity ${t} ${ease}`
         });
+        return this;
     }
     fadeOut(t = this.cache.t_out, ease = this.cache.ease_out) {
         if(typeof t === 'number') t+='ms'
