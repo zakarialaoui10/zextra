@@ -1,11 +1,11 @@
 import { Collapsible, Accordion } from "zextra/surface";
 import { Modal } from "zextra/dialog";
 // import { Callout } from "../src/feedback";
-import { Fade } from "zextra/transition";
+import { Fade , Grow} from "zextra/transition";
 import 'zextra/style'
 import {  tags } from "ziko/ui";
 
-globalThis.f = Fade({},
+globalThis.f = Grow({},
     tags.p('I am faded').style({
         width : '400px',
         height : '400px',

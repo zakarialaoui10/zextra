@@ -31,9 +31,12 @@ class UIFade extends UIElement {
             opacity: 0,
             transition : `opacity ${t} ${ease}`
         });
-        this.element.addEventListener("transitionend", function handler() {
-            element.style.display = 'none';
-            element.removeEventListener("transitionend", handler);
+        this.element.addEventListener("transitionend", function handler(e) {
+            if (e.propertyName === "opacity") {
+                element.style.display = 'none';
+                element.removeEventListener("transitionend", handler);
+                onFinish?.();
+            }
         });
         return this;
     }
