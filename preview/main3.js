@@ -1,11 +1,18 @@
 import { Collapsible, Accordion } from "zextra/surface";
 import { Modal } from "zextra/dialog";
 // import { Callout } from "../src/feedback";
+import { Fade } from "zextra/transition";
 import 'zextra/style'
 import {  tags } from "ziko/ui";
-import { HTMLWrapper } from "zextra/embed/html";
 
-HTMLWrapper('<div>djjdj</div>')
+globalThis.f = Fade({},
+    tags.p('I am faded').style({
+        width : '400px',
+        height : '400px',
+        background  : 'darkblue'
+    })
+)
+tags.p('After')
 
 // globalThis.s=tags.svg(
 //     { viewBox:"0 0 24 24", width:"20", height:"20", ariaHidden:"true" },
