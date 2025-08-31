@@ -1,4 +1,5 @@
 import { Collapsible, Accordion } from "zextra/surface";
+import { Modal } from "zextra/dialog";
 import 'zextra/style'
 import { tags } from "ziko/ui";
 
@@ -25,3 +26,4 @@ globalThis.a=Accordion({},
     c1,
     c2
 )
+globalThis.m = Modal(a)
