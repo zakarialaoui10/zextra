@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -52,6 +52,7 @@
     "rollup-plugin-svg-import": "^3.0.0"
   },
   "dependencies": {
-    "ziko": "^0.45.1"
+    "ziko": "^0.45.2",
+    "ziko-lucide": "^0.2.0"
   }
 }
