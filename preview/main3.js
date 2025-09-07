@@ -6,7 +6,7 @@ import {  tags } from "ziko/ui";
 
 // import { Callout } from "zextra/feedback";
 // import  Check  from 'ziko-lucide/Check'
-import { QView } from "zextra/q";
+import { QView, QText } from "zextra/q";
 
 // globalThis.f = Slide({},
 //     tags.p('I am faded').style({
@@ -57,3 +57,6 @@ const {li} = tags
 const items = new Array(10).fill(null).map((n,i)=> n = li(`item : ${i+1}`))
 QView({ score : .72}, tags.ol(), ...items
 )
+
+
+globalThis.a = QText({score : 0.5}, 'Hello world!', '...')
