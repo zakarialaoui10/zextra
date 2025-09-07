@@ -1,14 +1,14 @@
 import { UIElement } from "ziko/ui/index.js";
 import { clamp } from 'ziko/math/utils/index.js'
 class UIQView extends UIElement{
-    constructor({score, func = Math.floor},wrapper, ...items){
+    constructor({score, round_func = Math.floor},wrapper, ...items){
         super()
-        this.init(score, func, wrapper, ...items);
+        this.init(score, round_func, wrapper, ...items);
     }
-    init(score, func, wrapper, ...items){
+    init(score, round_func, wrapper, ...items){
         super.init(wrapper.element);
         score = clamp(score, 0, 1);
-        const count = func(items.length * score);
+        const count = round_func(items.length * score);
         wrapper.append(...items.splice(0, count))
         items.forEach(n=>n.unrender())
     }
