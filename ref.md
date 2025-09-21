@@ -16,37 +16,8 @@
 |-|-|-|
 |Button|MUI|-|
 |Fab|MUI|-|
-
-- **Inputs :**
-
-|Component|Inspiration|Status|
-|-|-|-|
-|Combobox|Shadcn||
-|InputCamera|Streamlit||
-|InputFile|||
-|InputMicro|||
-|InputOTP|Shadcn||
-
-- **List :**
-
-- **Layouts :**
-
-|Component|Inspiration|Status|
-|-|-|-|
-|HSplitter|||
-|Drawer|DaisyUI||
-|Meny|Meny - Hakimel||
-|VSplitter|||
-
-- **Nav :**
-
-|Component|Inspiration|Status|
-|-|-|-|
-|Breadcrumbs|||
-|Pagination|||
-|Stepper|||
-|Tabs|||
-
+|IconButton||
+|SpeedDial||
 
 - **Feedback :**
 
@@ -63,6 +34,29 @@
 |Toast||
 |Tooltip||
 
+- **Inputs :**
+
+|Component|Inspiration|Status|
+|-|-|-|
+|Combobox|Shadcn||
+|InputCamera|Streamlit||
+|InputFile|||
+|InputMicro|||
+|InputOTP|Shadcn||
+|Joyestick|||
+|Rating|||  (Start, Heart )
+
+- **Layouts :**
+
+|Component|Inspiration|Status|
+|-|-|-|
+|HSplitter|||
+|Drawer|DaisyUI||
+|Meny|Meny - Hakimel||
+|VSplitter|||
+
+- **List :**
+
 - **Logic :**
 
 |Component|Inspiration|Status|
@@ -70,10 +64,24 @@
 |QText|||
 |QView|||
 
+
+- **Nav :**
+
+|Component|Inspiration|Status|
+|-|-|-|
+|Breadcrumbs|||
+|Link|||
+|LinkCard|||
+|Pagination|||
+|Stepper|||
+|Tabs|||
+
 - **Transitions :**
 
 |Component|Inspiration|Status|
 |-|-|-|
+|Accordion||
+|Collapsible|||
 |Fade|||
 |Grow|||
 |Slide|||
@@ -89,10 +97,8 @@
 
 
 - Avatar (Shadcn)
-- Accordion
 - Bleed - Nextra
 - Carousel
-- Collapsible 
 - CoverView
 - Diff
 - Kbd
@@ -104,4 +110,6 @@
 - Toggle
 - Separators (Shadcn)
 - Resizable (Shadcn)
+- Paper (MUI)
+
 
