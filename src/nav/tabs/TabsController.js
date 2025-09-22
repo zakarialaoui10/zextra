@@ -1,4 +1,4 @@
-import { UIElement } from "ziko";
+import { UIElement, tags } from "ziko";
 class UITabsController extends UIElement{
     constructor(...Tab){
         super({element : 'div', name : 'zextra_tabs_controller'})
@@ -6,7 +6,13 @@ class UITabsController extends UIElement{
             display : 'flex',
             position : 'relative'
         })
-        this.append(...Tab)
+        this.slider = tags.div().style({
+            background : '#007BFF',
+            position : 'absolute',
+            transition: 'all 0.3s ease',
+        })
+        this.append(...Tab);
+        this.element.append(this.slider.element);
     }
 }
 

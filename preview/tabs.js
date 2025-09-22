@@ -17,5 +17,5 @@ globalThis.t = Tabs(
         tags.p('Panel 2'),
         tags.p('Panel 3')
     ),
-    { orientation : 'vertical'}
+    { orientation : 'horizontal'}
 )

@@ -14,22 +14,22 @@ class UITabs extends UIElement{
             this.pannel
         )     
         Object.assign(this.cache,{
+            orientation,
             active_index : null
         })
-        this.update() 
+        this.setup();
+        this.activate(0)
     }
-    // init(element, name, type, render){
-    //   super.init(element, name, type, render);
-      
-    //   return this;
-    // }
-    update(){
+    setup(){
         this.tabs.forEach((tab, i) => {
         tab.onClick(() => this.activate(i));
       });
     }
     get tabs(){
         return this.controller.items
+    }
+    get length(){
+        return this.controller.items.length
     }
     get activeIndex(){
         return this.cache.active_index
@@ -49,16 +49,30 @@ class UITabs extends UIElement{
         })
         this.pannel.forEach(n=>n.style({display : 'none'}))
         this.pannel[index].style({display : 'block'})
-        console.log(index)
+        const {offsetTop, offsetHeight, offsetLeft, offsetWidth} = this.activeTab.element
+        if(this.cache.orientation === 'vertical'){
+            this.controller.slider.style({
+                width : '3px',
+                height : `${offsetHeight}px`,
+                left : `${offsetWidth}px`,
+                top : `${offsetTop}px`,
+            })
+        }
+        else this.controller.slider.style({
+                width : `${offsetWidth}px`,
+                height : '3px',      
+                left : `${offsetLeft}px`,
+                top : '',
+                bottom : '0'
+            }) 
     }
-    next(){
-
+    next(n = 1){
+        this.activate((this.activeIndex + n) % this.length);
+        return this;
     }
-    previous(){
-
-    }
-    goto(){
-
+    previous(n = 1){
+        this.activate((this.activeIndex - n) % this.length);
+        return this;
     }
 }
 
