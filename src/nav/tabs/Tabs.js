@@ -18,12 +18,27 @@ class UITabs extends UIElement{
             active_index : null
         })
         this.setup();
-        this.activate(0)
+    }
+    updateOrientation(orientation = this.cache.orientation){
+        if(orientation !== this.cache.orientation){
+            this.cache.orientation = orientation;
+            if(this.cache.orientation === 'vertical'){
+                this.style({ flexDirection : 'row' })
+                this.controller.style({ flexDirection : 'column' })
+            }
+            else {
+                this.style({ flexDirection : 'column' })
+                this.controller.style({ flexDirection : 'row' })
+            }
+        }
+        return this;
     }
     setup(){
         this.tabs.forEach((tab, i) => {
-        tab.onClick(() => this.activate(i));
-      });
+            tab.onClick(() => this.activate(i));
+        });
+        this.updateOrientation()
+        this.activate(0)
     }
     get tabs(){
         return this.controller.items
