@@ -22,9 +22,10 @@ class UITabs extends UIElement{
     updateOrientation(orientation = this.cache.orientation){
         if(orientation !== this.cache.orientation){
             this.cache.orientation = orientation;
+            this.updateSliderOrientation()
             if(this.cache.orientation === 'vertical'){
-                this.style({ flexDirection : 'row' })
-                this.controller.style({ flexDirection : 'column' })
+                this.style({ flexDirection : 'row' });
+                this.controller.style({ flexDirection : 'column' });
             }
             else {
                 this.style({ flexDirection : 'column' })
@@ -32,6 +33,24 @@ class UITabs extends UIElement{
             }
         }
         return this;
+    }
+    updateSliderOrientation(){
+        const {offsetTop, offsetHeight, offsetLeft, offsetWidth} = this.activeTab.element
+        if(this.cache.orientation === 'vertical'){
+            this.controller.slider.style({
+                width : '3px',
+                height : `${offsetHeight}px`,
+                left : `${offsetWidth}px`,
+                top : `${offsetTop}px`,
+            })
+        }
+        else this.controller.slider.style({
+                width : `${offsetWidth}px`,
+                height : '3px',      
+                left : `${offsetLeft}px`,
+                top : '',
+                bottom : '0'
+            }) 
     }
     setup(){
         this.tabs.forEach((tab, i) => {
@@ -64,22 +83,7 @@ class UITabs extends UIElement{
         })
         this.pannel.forEach(n=>n.style({display : 'none'}))
         this.pannel[index].style({display : 'block'})
-        const {offsetTop, offsetHeight, offsetLeft, offsetWidth} = this.activeTab.element
-        if(this.cache.orientation === 'vertical'){
-            this.controller.slider.style({
-                width : '3px',
-                height : `${offsetHeight}px`,
-                left : `${offsetWidth}px`,
-                top : `${offsetTop}px`,
-            })
-        }
-        else this.controller.slider.style({
-                width : `${offsetWidth}px`,
-                height : '3px',      
-                left : `${offsetLeft}px`,
-                top : '',
-                bottom : '0'
-            }) 
+        this.updateSliderOrientation()
     }
     next(n = 1){
         this.activate((this.activeIndex + n) % this.length);
