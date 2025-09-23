@@ -1,23 +1,50 @@
+✅️☑️❌️
+
 ## Native Components
 
 |Component|Inspiration|Status|
 |-|-|-|
-|Flex||-|
-|Suspense|||
-|HTMLWrapper||
-|SVGWrapper||
-|Switch|Solidjs|
+|Flex||✅️|
+|Suspense||✅️|
+|HTMLWrapper||✅️|
+|SVGWrapper||✅️|
+|Switch|Solidjs|✅️|
 
 ## Zextra
 
-- **Buttons :**
+- **Buttons :** 
 
 |Component|Inspiration|Status|
 |-|-|-|
 |Button|MUI|-|
-|Fab|MUI|-|
+|Fab|MUI|✅️|
 |IconButton||
 |SpeedDial||
+
+- **Containers :**
+
+|Component|Inspiration|Status|
+|-|-|-|
+|AspectRatio||
+|Bleed|Nextra|
+|Box||
+|Diff||
+|Paper|MUI|
+|Stack|DaisyUI|
+
+
+- **Disclosures :** or Reveal = anything that shows, hides, or swaps content/state.
+
+|Component|Inspiration|Status|
+|-|-|-|
+|Accordion|-|✅️
+|Collapsible|-|✅️
+|Tabs||✅️
+|Carousel||
+|Swiper||
+|Swap||
+|Toggle||
+
 
 - **Feedback :**
 
@@ -27,9 +54,9 @@
 |Badge|||
 |Banner|Nextra||
 |Callout|||
-|Dialog|||
-|Modal|||
-|Indicator|DaisyUI||
+|Dialog||✅️
+|Modal||✅️
+|Indicator|DaisyUI - Mantine||
 |Status|DaisyUI||
 |Toast||
 |Tooltip||
@@ -43,26 +70,40 @@
 |InputFile|||
 |InputMicro|||
 |InputOTP|Shadcn||
-|Joyestick|||
+|Joystick|||
+|AngleInput|||
 |Rating|||  (Start, Heart )
 
 - **Layouts :**
 
 |Component|Inspiration|Status|
 |-|-|-|
-|HSplitter|||
 |Drawer|DaisyUI||
-|Meny|Meny - Hakimel||
-|VSplitter|||
+|Meny|Meny - Hakimel|✅️
+|HSplitter|-|✅️
+|VSplitter|-|✅️
+
 
 - **List :**
+
+|Component|Inspiration|Status|
+|-|-|-|
+|ListBox|||
+|Draggable||
+|Sortable||
+|FileTree|||
+|FileItem|||
+|TreeView|MUI|✅️
+|TreeItem|MUI|✅️
+|Timeline||
 
 - **Logic :**
 
 |Component|Inspiration|Status|
 |-|-|-|
-|QText|||
-|QView|||
+|QText||✅️
+|QView||✅️
+|Filter||
 
 
 - **Nav :**
@@ -74,42 +115,22 @@
 |LinkCard|||
 |Pagination|||
 |Stepper|||
-|Tabs|||
 
 - **Transitions :**
 
 |Component|Inspiration|Status|
 |-|-|-|
-|Accordion||
-|Collapsible|||
-|Fade|||
-|Grow|||
-|Slide|||
-
-- **Tree :**
-
-|Component|Inspiration|Status|
-|-|-|-|
-|FileTree|||
-|FileIteem|||
-|TreeView|MUI||
-|TreeItem|MUI||
-
+|Fade||✅️
+|Grow||✅️
+|Slide||✅️
 
 - Avatar (Shadcn)
-- Bleed - Nextra
-- Carousel
+<!-- - Bleed - Nextra -->
 - CoverView
-- Diff
 - Kbd
 - Skeleton
-- Stack ( DaisyUI  )
-- Swap
-- Swipper
-- Timeline
-- Toggle
 - Separators (Shadcn)
 - Resizable (Shadcn)
-- Paper (MUI)
+<!-- - Paper (MUI) -->
 
 

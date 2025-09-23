@@ -1,3 +1,3 @@
-export * from './Fade.js'
-export * from './Grow.js'
-export * from './Slide.js'
+export * from './fade/index.js'
+export * from './grow/index.js'
+export * from './slide/index.js'

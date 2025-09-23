@@ -1,6 +1,0 @@
-- Callout 
-- Alert 
-- Badge
-- Toast / Snackbar
-- Tooltip 
-- 
