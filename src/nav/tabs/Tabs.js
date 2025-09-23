@@ -22,7 +22,6 @@ class UITabs extends UIElement{
     updateOrientation(orientation = this.cache.orientation){
         if(orientation !== this.cache.orientation){
             this.cache.orientation = orientation;
-            this.updateSliderOrientation()
             if(this.cache.orientation === 'vertical'){
                 this.style({ flexDirection : 'row' });
                 this.controller.style({ flexDirection : 'column' });
@@ -31,6 +30,7 @@ class UITabs extends UIElement{
                 this.style({ flexDirection : 'column' })
                 this.controller.style({ flexDirection : 'row' })
             }
+            this.updateSliderOrientation()
         }
         return this;
     }

@@ -1,4 +1,6 @@
-import { p, App, Flex } from "ziko"
+import { tags, App, Flex } from "ziko"
+
+console.log(1)
 
 const {QueryParams} = __Ziko__
 export default ()=>{
@@ -6,7 +8,7 @@ export default ()=>{
         head : {
             title : "ziko",
         },
-        wrapper : ()=>Flex(p("Hello world").style({
+        wrapper : ()=>Flex(tags.p("Hello world").style({
             color : QueryParams.color ?? "black"
         })).size("100vw","100vh").vertical(0,0)
     })
