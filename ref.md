@@ -4,6 +4,7 @@
 
 |Component|Inspiration|Status|
 |-|-|-|
+|View||✅️|
 |Flex||✅️|
 |Suspense||✅️|
 |HTMLWrapper||✅️|
@@ -28,7 +29,7 @@
 |AspectRatio||
 |Bleed|Nextra|
 |Box||
-|Diff||
+|Diff||✅️
 |Paper|MUI|
 |Stack|DaisyUI|
 
