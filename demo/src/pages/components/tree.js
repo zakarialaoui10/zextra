@@ -1,4 +1,4 @@
-import { TreeView, TreeItem } from "zextra/tree";
+import { TreeView, TreeItem } from "zextra/lists";
 import 'zextra/style'
 const App = () => {
   globalThis.Tree = TreeView(

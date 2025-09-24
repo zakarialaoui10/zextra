@@ -3,7 +3,7 @@ import {
     TabsController, 
     Tab,
     TabsPanel
-} from 'zextra/nav'
+} from 'zextra/reveal'
 import {tags} from 'ziko'
 
 const App = () => {
