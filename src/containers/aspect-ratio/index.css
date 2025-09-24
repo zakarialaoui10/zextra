@@ -1,0 +1,15 @@
+.aspect-ratio {
+    position: relative;
+    /* width: 100%; */
+    /* display: block; */
+    overflow: hidden;
+    /* background: #ddd;
+    border-radius: 8px; */
+}
+.aspect-ratio > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

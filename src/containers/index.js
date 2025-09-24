@@ -1,1 +1,5 @@
 export * from './diff/index.js'
+export * from './paper/index.js'
+export * from './content/index.js'
+export * from './bleed/index.js'
+export * from './aspect-ratio/index.js'

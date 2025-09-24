@@ -73,7 +73,7 @@
 |InputOTP|Shadcn||
 |Joystick|||
 |AngleInput|||
-|Rating|||  (Start, Heart )
+|Rating|||✅️
 
 - **Layouts :**
 
