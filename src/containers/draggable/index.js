@@ -4,7 +4,7 @@ class UIDraggable extends UIElement{
     constructor(...items){
         super({element : 'div', name : 'draggable'})
         this.setAttr({
-            class : 'draggable'
+            class : 'zextra-draggable'
         })
         this.append(...items)
         this.dispose =  this.setup()

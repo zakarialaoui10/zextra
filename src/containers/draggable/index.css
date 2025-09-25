@@ -1,12 +1,11 @@
-  .draggable {
+  .zextra-draggable {
     display: inline-block;
     touch-action: none;
     user-select: none;
     cursor: grab;
     will-change: transform;
-    background-color: red;
   }
 
-  .draggable:active {
+  .zextra-draggable:active {
     cursor: grabbing;
   }
