@@ -1,6 +1,6 @@
 import { View, tags, Flex } from "ziko";
 import { RatingInput } from 'zextra/inputs'
-import { Content, Bleed, AspectRatio } from "zextra/containers";
+import { Content, Bleed, AspectRatio, Draggable } from "zextra/containers";
 import { Link } from 'zextra/nav'
 import Heart from 'ziko-lucide/heart'
 import Star from 'ziko-lucide/star'
@@ -13,6 +13,10 @@ globalThis.l = Link({
 }, "More Informations ... y..y.. ").style({
     border : '1px red solid',
     // margin : '50px auto',
+})
+
+globalThis.d = Draggable(l).style({
+    padding : '10px'
 })
 
 globalThis.l = Link({
