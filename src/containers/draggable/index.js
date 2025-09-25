@@ -4,7 +4,10 @@ class UIDraggable extends UIElement{
     constructor(...items){
         super({element : 'div', name : 'draggable'})
         this.setAttr({
-            class : 'zextra-draggable'
+            class : 'zextra-draggable',
+            tabindex : '0',
+            role : 'draggable',
+            'aria-grabbed' : 'false'
         })
         this.append(...items)
         this.dispose =  this.setup()
@@ -26,6 +29,7 @@ class UIDraggable extends UIElement{
 
         const onPointerMove = (e) => {
             if (!dragging) return;
+            this.setAttr({ 'aria-grabbed' : 'true' })
             currentX = e.clientX - startX;
             currentY = e.clientY - startY;
             wrapper.style.transform = `translate(${currentX}px, ${currentY}px)`;
@@ -33,11 +37,13 @@ class UIDraggable extends UIElement{
 
         const onPointerUp = (e) => {
             dragging = false;
+            this.setAttr({ 'aria-grabbed' : 'false' })
             wrapper.releasePointerCapture(e.pointerId);
         };
 
         const onPointerCancel = () => {
             dragging = false;
+            this.setAttr({ 'aria-grabbed' : 'false' })
         };
 
         wrapper.addEventListener('pointerdown', onPointerDown);

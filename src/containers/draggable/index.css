@@ -4,6 +4,8 @@
     user-select: none;
     cursor: grab;
     will-change: transform;
+    border: 1px dashed rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
   }
 
   .zextra-draggable:active {
