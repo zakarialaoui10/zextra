@@ -12,10 +12,10 @@ class UILink extends UIElement{
                 textDecorationThickness : '1.5px',
                 textUnderlineOffset : '2px' 
             },
-            padding : '2px',
+            // padding : '2px',
             justifyContent : 'flex-start',
             alignItems : 'center',
-            fontSize : '24px',
+            // fontSize : '24px',
             width : 'fit-content',
             color,
             

@@ -1,7 +1,7 @@
 import { View, tags, Flex } from "ziko";
 import { RatingInput } from 'zextra/inputs'
 import { Content, Bleed, AspectRatio, Draggable } from "zextra/containers";
-import { Link } from 'zextra/nav'
+import { Link, Breadcrumbs } from 'zextra/nav'
 import Heart from 'ziko-lucide/heart'
 import Star from 'ziko-lucide/star'
 // import ArrowUpRight from 'ziko-lucide/arrowupright'
@@ -21,10 +21,23 @@ globalThis.d = Draggable(l).style({
 
 globalThis.l = Link({
     href : '#',
+    icon : false
     // end_icon : ArrowUpRight({stroke : 'darkblue'})
 }, "Hello").style({
-    border : '1px red solid',
+    // border : '1px red solid',
     // margin : '50px auto',
+})
+
+globalThis.b = Breadcrumbs(
+    tags.a({href : '#'}, 'link 1'),
+    tags.a({href : '#'}, 'link 2'),
+    tags.a({href : '#'}, 'link 2'),
+    tags.a({href : '#'}, 'link 2'),
+    tags.a({href : '#'}, 'link 2'),
+    l
+).style({
+    border : '1px red solid',
+    margin : '10px'
 })
 
 

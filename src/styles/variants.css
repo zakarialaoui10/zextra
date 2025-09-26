@@ -1,0 +1,17 @@
+.contained {
+    background: var(--color);
+    color: var(--text-color, #fff);
+}
+.outlined {
+    color: var(--color);
+    outline: 2px solid var(--color);
+    background-color: transparent;
+}
+.text {
+    color : var(--color);
+    background-color: transparent;
+}
+.soft {
+    background: color-mix(in srgb, var(--color) 15%, white);
+    color: var(--color);
+}

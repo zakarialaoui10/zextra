@@ -1,0 +1,25 @@
+.zextra-breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: .7em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.zextra-breadcrumbs li a{
+  text-decoration: none !important;
+}
+.zextra-breadcrumbs li a:hover{
+  text-decoration: underline !important;
+}
+
+/* .zextra-breadcrumbs li + li::before {
+  content: "/";
+  font-size: 1.3em;
+  color: #000;
+  font-weight:bold;
+  margin: 0 0.4rem;
+  user-select: none;
+  text-decoration: none;
+} */
