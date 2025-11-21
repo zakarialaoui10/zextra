@@ -12,6 +12,7 @@
     "./style/*": "./src/*/index.css",
     "./*": {
       "import": "./src/components/*/index.js",
+      "types" : "./types/index.d.ts"
     },
     "./wrappers/*": {
       "import": "./wrappers/*/index.js"

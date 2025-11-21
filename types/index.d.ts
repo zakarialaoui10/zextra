@@ -1,7 +1,5 @@
-import type { Link } from './components/link.d.ts'
-declare module "zextra/*"{
-    global {
-        var AAAA: number;
-    }
-    export {Link}
+export type * from './components/index.d.ts'
+
+declare global {
+    var AAAA: number;
 }

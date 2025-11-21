@@ -1,12 +1,14 @@
-import { View, tags, Flex } from "ziko";
+import { View, tags, Flex, text } from "ziko";
 import { RatingInput } from 'zextra/inputs'
 import { Content, Bleed, AspectRatio, Draggable } from "zextra/containers";
 import { Link, Breadcrumbs } from 'zextra/nav'
 import Heart from 'ziko-lucide/heart'
 import Star from 'ziko-lucide/star'
 // import ArrowUpRight from 'ziko-lucide/arrowupright'
+import { Button } from "zextra/buttons";
+// const b = Button()
 
-globalThis.l = Link({
+const l = Link({
     href : '#',
     underline : true,
     // end_icon : ArrowUpRight({stroke : 'darkblue'})
@@ -15,9 +17,8 @@ globalThis.l = Link({
     // margin : '50px auto',
 })
 
-const aa = Link()
-
-
+const aa = Link({
+})
 
 globalThis.d = Draggable(l).style({
     padding : '10px'

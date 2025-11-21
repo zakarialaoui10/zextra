@@ -57,7 +57,7 @@ class UIButton extends UIElement{
     }
 }
 
-const Button = (text, variant, color) => new UIButton(text, variant, color)
+const Button = ({text, variant, color} = {}) => new UIButton(text, variant, color)
 
 export{
     UIButton,
