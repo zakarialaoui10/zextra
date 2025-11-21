@@ -15,6 +15,10 @@ globalThis.l = Link({
     // margin : '50px auto',
 })
 
+const aa = Link()
+
+
+
 globalThis.d = Draggable(l).style({
     padding : '10px'
 })
