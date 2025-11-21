@@ -9,7 +9,6 @@ export declare const Link: (
     underline?: boolean,
     inline?: boolean,
     icon?: UIElement,
-    text?: string | UIElement
+    text?: string | UIElement | HTMLElement
 ) => UILink;
 
-export default Link;
