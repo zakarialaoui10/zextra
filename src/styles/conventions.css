@@ -1,0 +1,42 @@
+:root {
+  /* Base spacing unit (use rem for scalability) */
+  --zextra-base-spacing: .25rem;
+
+  /* Typography */
+  --zextra-font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --zextra-font-size-xs: 0.75rem;
+  --zextra-font-size-sm: 0.875rem;
+  --zextra-font-size-md: 1rem;
+  --zextra-font-size-lg: 1.125rem;
+  --zextra-font-size-xl: 1.25rem;
+  --zextra-line-height-tight: 1.2;
+  --zextra-line-height-normal: 1.5;
+  --zextra-line-height-loose: 1.75;
+
+  /* Responsive breakpoints */
+  --zextra-breakpoint-sm: 600px;
+  --zextra-breakpoint-md: 960px;
+  --zextra-breakpoint-lg: 1280px;
+  --zextra-breakpoint-xl: 1920px;
+
+  /* Radii & borders */
+  --zextra-radius-sm: 2px;
+  --zextra-radius-md: 4px;
+  --zextra-radius-lg: 8px;
+  --zextra-border-width: 1px;
+
+  /* Z-index layers */
+  --zextra-z-default: 0;
+  --zextra-z-dropdown: 100;
+  --zextra-z-sticky: 200;
+  --zextra-z-modal: 1000;
+  --zextra-z-tooltip: 1100;
+
+  /* Motion */
+  --zextra-duration-fast: 0.12s;
+  --zextra-duration-medium: 0.3s;
+  --zextra-duration-slow: 0.6s;
+
+  /* Accessibility */
+  --zextra-focus-outline: 3px solid color-mix(in srgb, var(--zextra-color-primary) 18%, black 6%);
+}
