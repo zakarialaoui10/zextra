@@ -14,10 +14,10 @@
   --zextra-line-height-loose: 1.75;
 
   /* Responsive breakpoints */
-  --zextra-breakpoint-sm: 600px;
-  --zextra-breakpoint-md: 960px;
-  --zextra-breakpoint-lg: 1280px;
-  --zextra-breakpoint-xl: 1920px;
+  --zextra-bp-sm: 600px;
+  --zextra-bp-md: 960px;
+  --zextra-bp-lg: 1280px;
+  --zextra-bp-xl: 1920px;
 
   /* Radii & borders */
   --zextra-radius-sm: 2px;

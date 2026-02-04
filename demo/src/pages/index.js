@@ -2,10 +2,32 @@ import { View, tags, Flex, text } from "ziko/ui";
 import { Center } from 'zextra/containers'
 
 export default function(){
-    return Center(tags.p('Hello')).style({
-        width : '400px',
-        height :'400px'
+    globalThis.c = Center(tags.p('Hello')).style({
+        width : '80vw',
+        height :'400px',
+        margin : 'auto'
     })
+    c.sx(
+        {
+            bg : {
+                base : 'red',
+                xs : 'darkblue',
+                sm : 'blue',
+                md : 'green',
+                lg : 'yellow'
+            },
+            p : {
+                base : 0,
+                xs : 3,
+                sm : 6,
+                md : 9,
+                lg : 12
+            }
+
+        }
+        // {p : {base : 0, lg : 10}, m:{sm : 10, base : 1}}
+    )
+    return c
 }
 // import { RatingInput } from 'zextra/inputs'
 // import { Content, Bleed, AspectRatio, Draggable } from "zextra/containers";

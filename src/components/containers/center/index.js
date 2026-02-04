@@ -1,7 +1,8 @@
 import { UIElement } from "ziko/ui";
+import { ZextraUI } from "../../../constructor/zextra-ui.js";
 import './index.css'
 
-class UICenter extends UIElement{
+class UICenter extends ZextraUI{
     constructor(...items){
         super({ element : 'div', name : 'center'})
         this.append(...items).setAttr({class : 'zextra-center'}).style({ 
