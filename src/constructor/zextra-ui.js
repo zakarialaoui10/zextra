@@ -43,18 +43,22 @@ export class ZextraUI extends UIElement {
       }
     })
 
+    console.log({PROPS_QUERIES})
 
+    var i=0
     this.onResizeView(
       throttle(()=>{
         const w = this.width;
-        for(let bp of ['xs', 'sm', 'md', 'lg', 'xl'])
-          if(PROPS_QUERIES[bp] && w < BREAKPOINTS[bp]) return this.style(PROPS_QUERIES[bp])
+        // console.log(w)
+        for(let bp of ['xs', 'sm', 'md', 'lg', 'xl']){
+          if(PROPS_QUERIES[bp] && w < BREAKPOINTS[bp]){
+            console.log(i++, PROPS_QUERIES[bp])
+            return this.style(PROPS_QUERIES[bp])
+          } 
+        }
         if(PROPS_QUERIES.base) return this.style(PROPS_QUERIES.base)
-    }, 300))
+    }, 30))
 
 
   }
 }
-
-
-

@@ -3,9 +3,9 @@ import { Center } from 'zextra/containers'
 
 export default function(){
     globalThis.c = Center(tags.p('Hello')).style({
-        width : '80vw',
+        width : '100vw',
         height :'400px',
-        margin : 'auto'
+        margin : '0'
     })
     c.sx(
         {
@@ -22,6 +22,11 @@ export default function(){
                 sm : 6,
                 md : 9,
                 lg : 12
+            },
+            visibility : {
+                base : 'visible',
+                xs : 'hidden',
+                sm : 'visible'
             }
 
         }
