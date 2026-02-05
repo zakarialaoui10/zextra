@@ -5,8 +5,11 @@ import {
   ALIASES, 
   BREAKPOINTS,
   BREAKPOINTS_MAP,
-  BREAKPOINTS_STYLES_MAP
+  // BREAKPOINTS_STYLES_MAP
 } from "./consts.js";
+import{
+  createBreakpointsStyleMap
+} from './providers.js'
 import { 
   isResponsiveValue,
   transformValue,
@@ -30,12 +33,14 @@ export class ZextraUI extends UIElement {
     }
     this.style(BASE_STYLES);
 
+    const BREAKPOINTS_STYLES_MAP = createBreakpointsStyleMap()
+
     for(let prop in RESPONSIVE_PROPS){
       for(let bp of BREAKPOINTS){
         BREAKPOINTS_STYLES_MAP[bp][prop] = RESPONSIVE_PROPS[prop][bp] ?? RESPONSIVE_PROPS[prop]['base'] ?? ''
       }
     }
-
+    
     this.onResizeView(
         throttle(()=>{
           const w = this.width;
@@ -46,5 +51,6 @@ export class ZextraUI extends UIElement {
           }
       }, 30)
     )
+    console.log({BREAKPOINTS, BREAKPOINTS_MAP, BREAKPOINTS_STYLES_MAP})
   }
 }
