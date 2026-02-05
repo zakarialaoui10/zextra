@@ -3,12 +3,13 @@ import { throttle } from 'ziko/time'
 import '../styles/conventions.css';
 import { 
   ALIASES, 
-  BREAKPOINTS 
+  BREAKPOINTS,
+  BREAKPOINTS_MAP,
+  BREAKPOINTS_STYLES_MAP
 } from "./consts.js";
 import { 
   isResponsiveValue,
   transformValue,
-  isSpacingProp
 } from "./utils.js";
 
 export class ZextraUI extends UIElement {
@@ -29,31 +30,21 @@ export class ZextraUI extends UIElement {
     }
     this.style(BASE_STYLES);
 
-    const BREAKPOINT_STYLES  = {
-      xs : {},
-      sm : {},
-      md : {},
-      lg : {},
-      xl : {}
-    }
-
-    const BP = ['xs', 'sm', 'md', 'lg', 'xl'] 
-
     for(let prop in RESPONSIVE_PROPS){
-      for(let bp of BP){
-        BREAKPOINT_STYLES [bp][prop] = RESPONSIVE_PROPS[prop][bp] ?? RESPONSIVE_PROPS[prop]['base'] ?? ''
+      for(let bp of BREAKPOINTS){
+        BREAKPOINTS_STYLES_MAP[bp][prop] = RESPONSIVE_PROPS[prop][bp] ?? RESPONSIVE_PROPS[prop]['base'] ?? ''
       }
     }
 
     this.onResizeView(
         throttle(()=>{
           const w = this.width;
-          for(let bp of BP){
-            if(BREAKPOINT_STYLES [bp] && w < BREAKPOINTS[bp]){
-              return this.style(BREAKPOINT_STYLES [bp])
+          for(let bp of BREAKPOINTS){
+            if(BREAKPOINTS_STYLES_MAP[bp] && w < BREAKPOINTS_MAP[bp]){
+              return this.style(BREAKPOINTS_STYLES_MAP [bp])
             } 
           }
-      }, 30))
-
+      }, 30)
+    )
   }
 }
