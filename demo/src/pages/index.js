@@ -26,7 +26,7 @@ export default function(){
             visibility : {
                 base : 'visible',
                 xs : 'hidden',
-                sm : 'visible'
+                // sm : 'visible'
             }
 
         }
