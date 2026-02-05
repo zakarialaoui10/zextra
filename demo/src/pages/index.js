@@ -1,20 +1,27 @@
 import { View, tags, Flex, text } from "ziko/ui";
 import { Center } from 'zextra/containers'
+import { Shortcut } from 'zextra/typography'
 
 export default function(){
-    globalThis.c = Center(tags.p('Hello')).style({
-        width : '100vw',
+    globalThis.c = Center(
+        // tags.kbd('⌘ Ctrl')
+        Shortcut({keys : ['Ctrl', 'K']})
+    ).style({
+        width : '80vw',
         height :'400px',
-        margin : '0'
+        margin : '20px auto'
     })
     c.sx(
         {
-            bg : {
+            borderColor : {
                 base : 'red',
                 xs : 'darkblue',
                 sm : 'blue',
                 md : 'green',
                 lg : 'yellow'
+            },
+            borderRadius : {
+                base : "1em"
             },
             p : {
                 base : 0,
