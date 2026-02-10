@@ -1,23 +1,20 @@
-***Zextra*** stands for "Ziko Extra" is an extension package that enhances [ZikoJS](https://github.com/zakarialaoui10/ziko.js) by providing additional utilities and UI elements. It expands ZikoJS with extra features, making it easier to work with custom UI elements, Canvas utilities, and SVG manipulations. 
+[![zextra banner](./assets/zextra.svg)](https://github.com/zikojs)
+***Zextra*** is an extension for [ZikoJS](https://github.com/zakarialaoui10/zikojs) that adds extra utilities and UI components, making it easier to work with custom UI elements,
 
-Zextra is designed to seamlessly integrate with ZikoJS. It extends the core Ziko functionality by adding new classes, methods, and utilities while maintaining compatibility with existing ZikoJS components and elements.
+|Category|Components|
+|-|-|
+|Buttons|`Button` `Fab`|
+|Containers|`AspectRatio` `Bleed` `Center` `Content` `Diff` `Draggable` `Paper`|
+|Dialog|`Dialog` `Modal`|
+|Feedback|`Alert` `Callout`|
+|Inputs|`Rating` `Autocomplete`|
+|Layouts|`Meny` `Splitter`|
+|List||
+|Logics|`QText` `QView`|
+|Nav|`Breadcumbs` `Link`|
+|Reveal|`Accordion` `Collapsible` `Tabs`|
+|Transition|`Fade` `Grow` `Slide`|
+|Typography||
 
-
-UI Elements:
- - Accordion 
- - Alert
- - Carousel
- - Modal
- - Pagination
- - Slider
- - Splitter
- - Tabs
- - TreeView
- - Canvas
- - Svg
-
-
-Math : 
- - Signal 
 
 

@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "0.11.3",
+  "version": "0.12.1",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -12,6 +12,9 @@
     "./style/*": "./src/*/index.css",
     "./*": {
       "import": "./src/components/*/index.js"
+    },
+    "./providers/*": {
+      "import": "./src/providers/*/index.js"
     },
     "./wrappers/*": {
       "import": "./wrappers/*/index.js"
@@ -52,7 +55,7 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "ziko": "^0.60.1",
+    "ziko": "^0.61.2",
     "ziko-lucide": "^0.5.0"
   }
 }

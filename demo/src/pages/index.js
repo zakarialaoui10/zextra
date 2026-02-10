@@ -1,6 +1,7 @@
 import { View, tags, Flex, text } from "ziko/ui";
 import { Center } from 'zextra/containers'
 import { Shortcut } from 'zextra/typography'
+import { DirectionProvider } from "zextra/providers/direction";
 
 export default function(){
     globalThis.c = Center(
@@ -39,7 +40,10 @@ export default function(){
         }
         // {p : {base : 0, lg : 10}, m:{sm : 10, base : 1}}
     )
-    return c
+    globalThis.prv = DirectionProvider(
+        DirectionProvider(c, {dir : 'rtl'}), {dir : 'rtl'}
+    )
+    return prv.component
 }
 // import { RatingInput } from 'zextra/inputs'
 // import { Content, Bleed, AspectRatio, Draggable } from "zextra/containers";
