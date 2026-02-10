@@ -1,0 +1,37 @@
+.zextra-autocomplete{
+    position: relative;
+}
+
+.zextra-autocomplete input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.zextra-autocomplete ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    background: #fff;
+    max-height: 160px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.zextra-autocomplete li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.zextra-autocomplete li.active {
+    background: #eee;
+}
+
+.zextra-autocomplete li:hover {
+    background: #f0f0f0;
+}

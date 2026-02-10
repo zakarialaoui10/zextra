@@ -2,10 +2,24 @@ import { View, tags, Flex, text } from "ziko/ui";
 import { Center } from 'zextra/containers'
 import { Shortcut } from 'zextra/typography'
 import { DirectionProvider } from "zextra/providers/direction";
+import { Autocomplete } from 'zextra/inputs'
+const dataset = [
+    "JavaScript",
+    "TypeScript",
+    "VanJS",
+    "React",
+    "SolidJS",
+    "Svelte",
+    "Vue",
+    "ZikoJS"
+  ]
 
+  globalThis.a=Autocomplete({dataset})
+  a.mount(document.body)
 export default function(){
     globalThis.c = Center(
         // tags.kbd('⌘ Ctrl')
+        // Autocomplete({dataset}),
         Shortcut({keys : ['Ctrl', 'K']})
     ).style({
         width : '80vw',
@@ -41,7 +55,7 @@ export default function(){
         // {p : {base : 0, lg : 10}, m:{sm : 10, base : 1}}
     )
     globalThis.prv = DirectionProvider(
-        DirectionProvider(c, {dir : 'rtl'}), {dir : 'rtl'}
+        DirectionProvider(c, {dir : 'ltr'}), {dir : 'ltr'}
     )
     return prv.component
 }
