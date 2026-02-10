@@ -12,7 +12,7 @@
 |Layouts|`Columns` `Meny` `Splitter`|3|
 |List|`TreeView TreeItem`|2|
 |Logics|`QText` `QView`|2|
-|Nav|`Breadcumbs` `Link`|2|
+|Nav|`Breadcumbs` `Link` `TableOfContents`|3|
 |Reveal|`Accordion` `Collapsible` `Tabs Tab TabSlider TabsController TabsPannel`|7|
 |Transition|`Fade` `Grow` `Slide` `Tilt(In Progress)`|4|
 |Typography|`Kbd` `Shortcut`|2|

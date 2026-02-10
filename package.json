@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "0.12.4",
+  "version": "0.13.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -55,7 +55,7 @@
     "rollup": "^4.24.0"
   },
   "dependencies": {
-    "ziko": "^0.61.2",
+    "ziko": "^0.62.0",
     "ziko-lucide": "^0.5.0"
   }
 }

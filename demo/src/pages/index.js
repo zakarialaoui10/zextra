@@ -3,6 +3,7 @@ import { Center } from 'zextra/containers'
 import { Shortcut } from 'zextra/typography'
 import { DirectionProvider } from "zextra/providers/direction";
 import { Autocomplete } from 'zextra/inputs'
+import { TableOfContents } from 'zextra/nav'
 const dataset = [
     "JavaScript",
     "TypeScript",
@@ -14,8 +15,10 @@ const dataset = [
     "ZikoJS"
   ]
 
-  globalThis.a=Autocomplete({dataset})
-  a.mount(document.body)
+//   globalThis.a=Autocomplete({dataset})
+//   a.mount(document.body)
+globalThis.toc = TableOfContents()
+toc.mount(document.getElementById("app"))
 export default function(){
     globalThis.c = Center(
         // tags.kbd('⌘ Ctrl')
