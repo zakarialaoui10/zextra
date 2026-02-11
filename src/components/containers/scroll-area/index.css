@@ -1,0 +1,16 @@
+.scroll-area{
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+ /* Optional: style scrollbars (Webkit browsers) */
+.scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+}
+.scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
