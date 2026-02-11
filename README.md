@@ -15,7 +15,7 @@
 |Nav|`Breadcumbs` `Link` `TableOfContents`|3|
 |Reveal|`Accordion` `Collapsible` `Tabs Tab TabSlider TabsController TabsPannel`|7|
 |Transition|`Fade` `Grow` `Slide` `Tilt(In Progress)`|4|
-|Typography|`Kbd` `Shortcut`|2|
+|Typography|`Kbd` `Shortcut` `Blockquote` `Code`|4|
 
 
 
