@@ -5,7 +5,7 @@
 |Category|Components|Length|
 |-|-|-|
 |Buttons|`Button` `Fab`|2|
-|Containers|`AspectRatio` `Bleed` `Center` `Content` `Diff` `Draggable` `Paper`|7|
+|Containers|`AspectRatio` `Bleed` `Center` `Content` `Diff` `Draggable` `Paper` `ScrollArea`|8|
 |Dialog|`Dialog` `Modal` `Alert` `Callout`|2|
 |Feedback|`Alert` `Callout`|2|
 |Inputs|`Rating` `Autocomplete( In Progress)`|2|
