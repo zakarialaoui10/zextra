@@ -1,6 +1,7 @@
-import { ZextraUI } from "../../../constructor/zextra-ui.js";
+import { ZextraUI } from '../../../constructor/zextra-ui.js';
+import { call_with_optional_props } from 'ziko/ui';
 export class UIColumns extends ZextraUI{
-    constructor({gap}, ...items){
+    constructor({gap = 1} = {}, ...items){
         super({element : 'div'})
         this.sx({
             // display : 'grid',
@@ -12,4 +13,4 @@ export class UIColumns extends ZextraUI{
         this.append(...items)
     }
 }
-export const Columns = ({cols}, ...items) => new Columns({cols}, ...items)
+export const Columns = call_with_optional_props(UIColumns)
