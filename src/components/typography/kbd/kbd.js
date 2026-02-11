@@ -1,4 +1,3 @@
-// import { tags } from "ziko/ui";
 import { ZextraUI } from "../../../constructor/zextra-ui.js";
 import '../../../styles/conventions.css'
 

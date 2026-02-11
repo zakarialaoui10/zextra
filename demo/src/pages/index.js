@@ -1,5 +1,12 @@
 import { Columns } from "zextra/layouts/columns";
+import { Blockquote } from "zextra/typography";
 import { tags } from "ziko/ui";
+
+
+globalThis.b = Blockquote({
+    cite : 'kdkdk.js',
+    quote : 'kkkfd dkkd dhhdhd dhdhd dhdhdhd dhdhdh dddhd djddhd dhdhdhd dhdhdhd djdjdjd djjdjd djdjdjd d djdjd '
+})
 
 const {p} = tags
 export default function App(){

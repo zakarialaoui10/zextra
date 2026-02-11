@@ -1,0 +1,14 @@
+.zextra-blockquote{
+    position: relative;
+    margin: .5rem;
+    border : 2px dotted blue;
+    border-inline-start: 4px solid darkblue;
+    /* padding-block: .75rem; */
+    padding-inline: 1rem;
+    line-height: 1.6;
+    max-width: 65ch;
+
+    /* background: #f8fafc; */
+    font-style: italic;
+    color: #334155;
+}

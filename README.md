@@ -6,7 +6,7 @@
 |-|-|-|
 |Actions|`Button` `Fab` `DownloadTrigger`|3|
 |Containers|`AspectRatio` `Bleed` `Center` `Content` `Diff` `Draggable` `Paper` `ScrollArea`|8|
-|Dialog|`Dialog` `Modal` `Alert` `Callout`|2|
+|Dialog|`Dialog` `Modal`|2|
 |Feedback|`Alert` `Callout`|2|
 |Inputs|`Rating` `Autocomplete( In Progress)`|2|
 |Layouts|`Columns` `Meny` `Splitter`|3|
