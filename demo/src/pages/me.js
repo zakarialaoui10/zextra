@@ -1,8 +1,11 @@
 import { Columns } from "zextra/layouts/columns";
 import { ScrollArea } from "zextra/containers";
+import { DownloadTrigger } from "zextra/actions";
 import { tags } from "ziko/ui";
 
 const {p, pre, a} = tags
+
+globalThis.d = DownloadTrigger({data : 'hello', fileName : 'test'}, tags.button('Download'))
 
 
 globalThis.s = ScrollArea(
