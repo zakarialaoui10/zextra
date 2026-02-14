@@ -1,5 +1,6 @@
 import { Columns } from "zextra/layouts/columns";
 import { Blockquote } from "zextra/typography";
+import { TableOfContents } from 'zextra/nav'
 import { tags } from "ziko/ui";
 
 
@@ -9,7 +10,10 @@ globalThis.b = Blockquote({
 })
 
 const {p} = tags
+globalThis.a = TableOfContents({depth : [1, 3]})
+a.mount(document.getElementById('app'))
 export default function App(){
+
 
     globalThis.col = Columns(
         {gap : 10},
