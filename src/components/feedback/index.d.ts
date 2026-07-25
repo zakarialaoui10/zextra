@@ -1,0 +1,1 @@
+export type * from './skeleton/index.d.ts'

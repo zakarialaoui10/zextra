@@ -7,8 +7,13 @@ import { Joystick } from 'zextra/inputs/joystick'
 import { TableOfContents } from "zextra/nav/table-of-contents";
 import { Marquee } from "zextra/reveal";
 import { tags } from "ziko/src/dom/index.js";
+import { Skeleton } from 'zextra/feedback'
+
 
 const {h3, p} = tags
+
+globalThis.sk = Skeleton().mount(document.body)
+
 globalThis.m = Marquee()
 
 const pp = () => p('Hello world').style({
@@ -51,3 +56,4 @@ TableOfContents().mount(document.body).style({
 })
 
 ShineBorder({shineColor: ["#a855f7", "#ec4899", "#3b82f6"]}, j).mount(document.body)
+
