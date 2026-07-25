@@ -9,12 +9,16 @@ import { Marquee } from "zextra/reveal";
 import { tags } from "ziko/src/dom/index.js";
 import { Skeleton } from 'zextra/feedback'
 
+import { PixelImage } from 'zextra/media'
+
 
 const {h3, p} = tags
 
 globalThis.sk = Skeleton().mount(document.body)
 
 globalThis.m = Marquee()
+
+globalThis.pi = PixelImage({src : 'https://picsum.photos/id/1062/400/300'}).mount(document.body)
 
 const pp = () => p('Hello world').style({
     width : Random.int(100,300)+'px',

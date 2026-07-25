@@ -1,9 +1,11 @@
-1.4.0 : Add `decorators\ElectricBorder`component 
-1.5.0 : Add `conatainers\Wrap` component 
-1.6.0 : Add `inputs\Joystick` input component
-1.6.1 : Fix `nav\TableOfContents` by tracking user scroll
+1.4.0 : Add `decorators/ElectricBorder`component 
+1.5.0 : Add `conatainers/Wrap` component 
+1.6.0 : Add `inputs/Joystick` input component
+1.6.1 : Fix `nav/TableOfContents` by tracking user scroll
 1.7.0 : 
     Migrate from `decorators` to `borders`
-    Add `borders\ShineBorder` component
+    Add `borders/ShineBorder` component
 1.8.0 : 
-    Add `feedback\Skeleton`
+    Add `feedback/Skeleton`
+1.9.0 :
+    Add `media/PixelImage` 
