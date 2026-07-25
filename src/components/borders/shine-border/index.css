@@ -1,0 +1,78 @@
+/* Register custom property so CSS can animate angle smoothly */
+    @property --gradient-angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* body {
+      background-color: #09090b;
+      color: #f4f4f5;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    } */
+
+    /* Container holding border and child content */
+    .shine-container {
+      position: relative;
+      display: inline-block;
+      border-radius: 12px;
+      padding: 1.5px; /* Border thickness */
+      background: #27272a; /* Fallback static border */
+      overflow: hidden;
+    }
+
+    /* The glowing animated border pseudo-element */
+    .shine-container::before {
+      content: "";
+      position: absolute;
+      inset: -150%; /* Extended boundaries prevent clipped gradient edges during rotation */
+      
+      /* Dynamic conic gradient length based on --shine-length variable */
+      background: conic-gradient(
+        from var(--gradient-angle),
+        transparent 0%,
+        transparent calc(100% - var(--shine-length, 30%)),
+        var(--shine-color, #3b82f6) 100%
+      );
+      animation: shine-spin 4s linear infinite;
+      z-index: 0;
+    }
+
+    /* Inner mask layer wrapping user children */
+    .shine-content {
+      position: relative;
+      z-index: 1;
+      border-radius: 10.5px; /* Keeps inner corners smooth relative to outer padding */
+      background-color: #18181b;
+      height: 100%;
+      width: 100%;
+    }
+
+    @keyframes shine-spin {
+      0% {
+        --gradient-angle: 0deg;
+      }
+      100% {
+        --gradient-angle: 360deg;
+      }
+    }
+
+    /* Demo card content styling */
+    .card {
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .card h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+    }
+    .card p {
+      margin: 0;
+      color: #a1a1aa;
+      font-size: 0.9rem;
+    }

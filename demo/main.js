@@ -1,6 +1,6 @@
 import { MorphingText } from "zextra/typography/morphing-text";
 import { Wrap } from "../src/components/containers/wrap";
-import { ElectricBorder } from 'zextra/decorators/electric-border'
+import { ElectricBorder, ShineBorder } from 'zextra/borders'
 // MorphingText(['Hello', 'world']).mount(document.body)
 import { Random } from 'ziko/math'
 import { Joystick } from 'zextra/inputs/joystick'
@@ -49,3 +49,5 @@ TableOfContents().mount(document.body).style({
     position : 'fixed',
     right : '0'
 })
+
+ShineBorder({shineColor: ["#a855f7", "#ec4899", "#3b82f6"]}, j).mount(document.body)
