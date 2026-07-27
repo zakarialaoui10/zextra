@@ -1,0 +1,122 @@
+/* Target Link Styles */
+.glimpse-link {
+    /* color: #f4f4f5; */
+    text-decoration: underline;
+    text-decoration-color: #3f3f46;
+    text-underline-offset: 4px;
+    font-weight: 500;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.glimpse-link:hover {
+    color: #ffffff;
+    text-decoration-color: #a1a1aa;
+}
+
+/* Glimpse Card Preview Container */
+.glimpse-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glimpse-card.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* Image Preview Section */
+.glimpse-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #27272a;
+    overflow: hidden;
+}
+
+.glimpse-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+/* Skeleton Loader */
+.glimpse-skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #27272a 25%, #3f3f46 50%, #27272a 75%);
+    background-size: 200% 100%;
+    animation: shim 1.5s infinite;
+}
+
+@keyframes shim {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Card Content */
+.glimpse-content {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.glimpse-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.glimpse-favicon {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    background-color: #27272a;
+}
+
+.glimpse-domain {
+    font-size: 0.75rem;
+    color: #71717a;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.glimpse-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f4f4f5;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.glimpse-description {
+    font-size: 0.775rem;
+    color: #a1a1aa;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
