@@ -6,8 +6,15 @@ import {
 
 const { a, div, img, span } = tags;
 
-export class UIGlimps extends UIElement{
-    constructor({url = 'https://github.com', target = '_blank', title, description, image} = {}, ...items){
+export class UIGlimpse extends UIElement{
+    constructor({
+        url = 'https://github.com', 
+        target = '_blank', 
+        title, 
+        description, 
+        image,
+        delay = 180
+    } = {}, ...items){
         super({ element : 'a'})
         // this.link = a({class : 'glimpse-link', url, target}, ...items);
 
@@ -16,7 +23,7 @@ export class UIGlimps extends UIElement{
             title,
             description,
             image, 
-            delay : 180
+            delay,
         }
         
         this.setAttr({ class : 'glimpse-link', href : url, target});
@@ -32,17 +39,16 @@ export class UIGlimps extends UIElement{
         this.setup();
     }
     setup(){
-        this.renderCard()
+        this.#renderCard()
         // this.onPtrEnter(()=> console.log('Enter ...'))
-        this.on('pointerenter', () => this.handleEnter())
-        this.on('pointerleave', () => this.handleLeave())
+        this.on('pointerenter', () => this.#handleEnter())
+        this.on('pointerleave', () => this.#handleLeave())
     }
 
-    renderCard(){
+    #renderCard(){
         if(this?.g_card) this.g_card.unmount();
         // Should Destroy All events 
         
-
         const parsed_url = new URL(this.config.url);
         const image_url = this.config.image || `https://api.microlink.io/?url=${encodeURIComponent(this.config.url)}&embed=screenshot.url`;
 
@@ -101,7 +107,7 @@ export class UIGlimps extends UIElement{
 
     }
 
-    positionCard(){
+    #positionCard(){
         const rect = this.element.getBoundingClientRect(); 
         const cardRect = this.g_card.element.getBoundingClientRect();
 
@@ -115,25 +121,23 @@ export class UIGlimps extends UIElement{
           left = window.innerWidth - cardRect.width - padding;
         }
 
-        // console.log({top, left})
-
         this.g_card.style({
             top : `${top}px`,
             left : `${left}px`
         })
     }
 
-    handleEnter(){
+    #handleEnter(){
         clearTimeout(this.hideTimer);
         this.showTimer = setTimeout(() => {
-          this.positionCard();
+          this.#positionCard();
           this.g_card.element.classList.add('visible');
         }, this.config.delay);
     }
-    handleLeave(){
+    #handleLeave(){
         clearTimeout(this.showTimer);
         this.hideTimer = setTimeout(() => this.g_card.element.classList.remove('visible'), 150);
     }
 }
 
-export const Glimps = call_with_optional_props(UIGlimps);
+export const Glimpse = call_with_optional_props(UIGlimpse);

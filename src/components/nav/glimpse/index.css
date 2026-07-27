@@ -1,6 +1,6 @@
 /* Target Link Styles */
-.glimpse-link {
-    /* color: #f4f4f5; */
+/* .glimpse-link {
+    color: #f4f4f5;
     text-decoration: underline;
     text-decoration-color: #3f3f46;
     text-underline-offset: 4px;
@@ -12,7 +12,7 @@
 .glimpse-link:hover {
     color: #ffffff;
     text-decoration-color: #a1a1aa;
-}
+} */
 
 /* Glimpse Card Preview Container */
 .glimpse-card {

@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -13,7 +13,8 @@
       "import": "./src/components/*/main.js"
     },
     "./*":{
-      "import": "./src/components/*/index.js"
+      "import": "./src/components/*/index.js",
+      "types": "./src/components/*/index.d.ts"
     },
     "./style": {
       "import": "./src/styles/index.css"
