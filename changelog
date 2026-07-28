@@ -11,3 +11,5 @@
     Add `media/PixelImage` 
 1.10.0 : 
     Add `nav/Glimpse`
+1.11.0 : 
+    Add `overlays/FloatingPanel`
