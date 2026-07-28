@@ -13,3 +13,5 @@
     Add `nav/Glimpse`
 1.11.0 : 
     Add `overlays/FloatingPanel`
+1.11.2 : 
+    Fix ziko-lucide icon subpath imports failing on esm.sh due to case-sensitive filesystem resolution
