@@ -13,11 +13,12 @@ import { PixelImage } from 'zextra/media'
 
 import { UIGlimpse, Glimpse } from "zextra/nav/glimpse";
 
-import { AlphaSlider } from 'zextra/inputs/AlphaSlider'
 
-AlphaSlider({
-    color : 'green'
-}).mount(document.body)
+import { FloatingPanel } from "zextra/overlays/FloatingPnael";
+
+const TARGET = document.body;
+
+globalThis.fp = FloatingPanel().mount(TARGET).open().toggleExtend()
 
 globalThis.g = Glimpse(
     {
