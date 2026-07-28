@@ -1,5 +1,5 @@
-import { UIElement } from "ziko/dom/index.js";
-import { clamp } from 'ziko/math/utils/index.js'
+import { UIElement } from "ziko/dom";
+import { clamp } from 'ziko/math/utils'
 class UIQText extends UIElement{
     constructor({score, func = Math.floor}, text, after = ''){
         super()

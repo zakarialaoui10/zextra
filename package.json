@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "",
   "main": "src/index.js",
   "type": "module",
@@ -9,10 +9,10 @@
     "zextra": "./bin/index.js"
   },
   "exports": {
-    "./no-css/*":{
+    "./no-css/*": {
       "import": "./src/components/*/main.js"
     },
-    "./*":{
+    "./*": {
       "import": "./src/components/*/index.js",
       "types": "./src/components/*/index.d.ts"
     },
@@ -62,14 +62,16 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
     "cross-env": "^10.1.0",
-    "rollup": "^4.62.2"
+    "glob": "^13.0.6",
+    "rollup": "^4.62.3",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",
     "atropos": "^2.0.2",
     "isotope-layout": "^3.0.6",
     "video.js": "^8.23.9",
-    "ziko": "^1.1.0",
+    "ziko": "^1.1.1",
     "ziko-lucide": "^1.0.0"
   }
 }

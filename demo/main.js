@@ -16,6 +16,10 @@ import { UIGlimpse, Glimpse } from "zextra/nav/glimpse";
 
 import { FloatingPanel } from "zextra/overlays/FloatingPnael";
 
+import { Link } from 'zextra/nav/link'
+
+globalThis.Link = Link
+
 const TARGET = document.body;
 
 globalThis.fp = FloatingPanel().mount(TARGET).open().toggleExtend()

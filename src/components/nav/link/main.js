@@ -1,5 +1,5 @@
 import { UIElement } from "ziko/dom";
-import {ArrowUpRight} from 'ziko-lucide/arrowupright'
+import { ArrowUpRight } from 'ziko-lucide/ArrowUpRight'
 
 class UILink extends UIElement{
     constructor({href, target, color, underline, inline, icon} = {}, text){
