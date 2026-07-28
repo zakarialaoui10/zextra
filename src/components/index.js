@@ -11,6 +11,7 @@ export * from './reveal';
 export * from './transition';
 export * from './typography';
 export * from './borders/index.js'
+export * from './overlays/index.js'
 // export * from './alert';
 // export * from './splitter';
 // export * from './pagination';

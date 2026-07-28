@@ -13,6 +13,12 @@ import { PixelImage } from 'zextra/media'
 
 import { UIGlimpse, Glimpse } from "zextra/nav/glimpse";
 
+import { AlphaSlider } from 'zextra/inputs/AlphaSlider'
+
+AlphaSlider({
+    color : 'green'
+}).mount(document.body)
+
 globalThis.g = Glimpse(
     {
         title: "GitHub: Let's build from here",
