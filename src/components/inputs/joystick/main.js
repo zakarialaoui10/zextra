@@ -42,16 +42,6 @@ class UIJoystick extends UIElement{
         autoCenter : true,
     };
 
-    // this.settings = {
-    //     xMin,
-    //     xMax,
-    //     yMin,
-    //     yMax,
-    //     dx,
-    //     dy,
-    //     autoCenter,
-    // }
-
     this.setAttr({class : 'zextra joystick-container'});
     this.label_ui = span({class : 'zextra joystick-label'}, label);
     this.handle_ui = div({class : 'zextra joystick-handle'});
@@ -66,11 +56,10 @@ class UIJoystick extends UIElement{
         div({class : 'zextra joystick-axis-y'}),
         this.handle_ui
     );
-    this.readout_ui = div({class : 'zextra joystick-values'})
+    // this.readout_ui = div({class : 'zextra joystick-values'})
     this.append(
         span({class : 'zextra joystick-label'}, label),
         this.base_ui,
-        this.readout_ui 
     )
 
     this.normX = 0;
@@ -83,7 +72,9 @@ class UIJoystick extends UIElement{
     
     
     this.base = this.base_ui.element;
-    this.domRefs = { handle : this.handle_ui.element, readout : this.readout_ui.element };
+    this.domRefs = { 
+        handle : this.handle_ui.element, 
+    };
 
     this._bindEvents();
     this._updatePosition(0, 0);
@@ -98,7 +89,7 @@ class UIJoystick extends UIElement{
     const { x, y } = calculateScaledValues(clampedX, clampedY, this.settings);
     const isAnimated = !this.isDragging && this.activeKeys.size === 0 && this.settings.autoCenter;
 
-    renderJoystickUI(this.domRefs, clampedX, clampedY, x, y, isAnimated);
+    renderJoystickUI(this.handle_ui, clampedX, clampedY, x, y, isAnimated);
     dispatchJoystickEvents(this.element, x, y, this.eventTracker);
     }
 

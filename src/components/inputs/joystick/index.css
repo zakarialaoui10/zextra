@@ -1,36 +1,18 @@
  :root {
-      --joystick-size: 140px;
-      --handle-size: 20px;
-      --base-bg: #1e293b;
-      --base-border: #334155;
-      --handle-bg: #3b82f6;
-      --handle-shadow: rgba(0, 0, 0, 0.4);
-      --label-color: #94a3b8;
-}
 
-/* * {
-    box-sizing: border-box;
 }
-
-body {
-    background-color: #0f172a;
-    color: #f8fafc;
-    font-family: system-ui, -apple-system, sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 2rem;
-    user-select: none;
-    -webkit-user-select: none;
-} */
 
 /* Rigid container dimensions + center alignment */
 .zextra{
     &.joystick-container {
+        --joystick-size: 140px;
+        --handle-size: 20px;
+        --base-bg: #1e293b;
+        --base-border: #334155;
+        --handle-bg: #3b82f6;
+        --handle-shadow: rgba(0, 0, 0, 0.4);
+        --label-color: #94a3b8;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -123,19 +105,5 @@ body {
 
     &.joystick-base:active .joystick-handle {
         cursor: grabbing;
-    }
-
-    /* Values Readout Display */
-    &.joystick-values {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: #cbd5e1;
-        font-family: ui-monospace, SFMono-Regular, monospace;
-        background: #020617;
-        padding: 4px 10px;
-        border-radius: 6px;
-        border: 1px solid #1e293b;
-        pointer-events: none;
-        white-space: nowrap;
     }
 }

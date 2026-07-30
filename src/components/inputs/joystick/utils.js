@@ -71,15 +71,15 @@ export const createJoystickDOM = (opts) => {
 
     base.append(axisX, axisY, handle);
 
-    const readout = document.createElement("div");
-    readout.className = "joystick-values";
+    container.append(
+        label, 
+        base, 
+    );
 
-    container.append(label, base, readout);
-
-    return { container, base, handle, readout };
+    return { container, base, handle };
 };
 
-export const renderJoystickUI = ({ handle, readout }, normX, normY, calculatedX, calculatedY, isAnimated) => {
+export const renderJoystickUI = ( handle_ui , normX, normY, calculatedX, calculatedY, isAnimated) => {
     const maxPixelRadius = (140 - 50) / 2;
     const pxX = normX * maxPixelRadius;
     const pxY = normY * maxPixelRadius;
@@ -88,8 +88,11 @@ export const renderJoystickUI = ({ handle, readout }, normX, normY, calculatedX,
     ? "transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
     : "";
 
-    handle.style.cssText = `transform: translate3d(${pxX}px, ${pxY}px, 0); ${transition}`;
-    readout.textContent = `X: ${calculatedX.toFixed(2)} | Y: ${calculatedY.toFixed(2)}`;
+    // handle_ui.style({
+    //     transform : `translate3d(${pxX}px, ${pxY}px, 0); ${transition}`
+    // })
+
+    handle_ui.element.style.cssText = `transform: translate3d(${pxX}px, ${pxY}px, 0); ${transition}`;
 };
 
 export const dispatchJoystickEvents = (targetNode, x, y, stateTracker) => {
