@@ -1,4 +1,4 @@
-export * from './actions/main.js';
+export * from './buttons/main.js';
 export * from './containers/main.js';
 export * from './dialog/main.js'; // DEPRECTAED
 export * from './feedback/main.js';

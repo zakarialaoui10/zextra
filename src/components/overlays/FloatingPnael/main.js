@@ -8,6 +8,9 @@ const {
     rect
 } = tags;
 
+import { X } from 'ziko-lucide/X';
+import { Minus } from 'ziko-lucide/Minus'
+
 const ICONS = {
     maximize: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>',
     restore: '<rect x="8" y="4" width="12" height="12" rx="2"></rect><path d="M4 8v12a2 2 0 0 0 2 2h12"></path>'
@@ -23,9 +26,7 @@ export class UIFloatingPanel extends UIElement{
             div({class: 'panel-title'},'Floating Panel'),
             div({class: 'panel-controls'},
                 button({class: 'ctrl-btn', id: 'reduceBtn', title: 'Reduce'},
-                    svg({viewBox: '0 0 24 24'},
-                    line({x1: '5', y1: '12', x2: '19', y2: '12'}),
-                    ),
+                    Minus()
                 ).onClick(()=> this.toggleReduce()),
                 button({class: 'ctrl-btn', id: 'extendBtn', title: 'Extend to full size'},
                     svg({id: 'extendIcon', viewBox: '0 0 24 24'},
@@ -33,11 +34,8 @@ export class UIFloatingPanel extends UIElement{
                     ),
                 ).onClick(()=> this.toggleExtend()),
                 button({class: 'ctrl-btn', id: 'closeBtn', title: 'Close'},
-                    svg({viewBox: '0 0 24 24'},
-                    line({x1: '18', y1: '6', x2: '6', y2: '18'}),
-                    line({x1: '6', y1: '6', x2: '18', y2: '18'}),
-                    ),
-                ),
+                  X(),
+                ).onClick(()=> this.close()),
             ),
         ).onPtrDown(e => this.startDrag(e.event))
 
