@@ -15,3 +15,8 @@
     Add `overlays/FloatingPanel`
 1.11.2 : 
     Fix ziko-lucide icon subpath imports failing on esm.sh due to case-sensitive filesystem resolution
+1.12.0 : 
+    Rename `actions` to `buttons`
+    Remove readout from the `Joystick`component
+    Use ziko-lucide components in `FloatingPanel`
+    Introduce i18n in `FloatingPanel` controls

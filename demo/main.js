@@ -16,9 +16,9 @@ import { UIGlimpse, Glimpse } from "zextra/nav/glimpse";
 
 import { FloatingPanel } from "zextra/overlays/FloatingPnael";
 
-import { Link } from 'zextra/nav/link'
+// import { Link } from 'zextra/nav/link'
 
-globalThis.Link = Link
+// globalThis.Link = Link
 
 const TARGET = document.body;
 

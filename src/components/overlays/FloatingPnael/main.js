@@ -10,6 +10,8 @@ const {
 
 import { X } from 'ziko-lucide/X';
 import { Minus } from 'ziko-lucide/Minus'
+import { Maximize } from 'ziko-lucide/Maximize'
+import { Minimize } from 'ziko-lucide/Minimize'
 
 const ICONS = {
     maximize: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>',
@@ -17,29 +19,44 @@ const ICONS = {
 };
 
 export class UIFloatingPanel extends UIElement{
-    constructor(){
+    constructor({
+      title = 'Floating Panel',
+      i18n = {
+        reduceBtn : 'Reduce',
+        extendBtn : 'Extend to full size',
+        restoreSizeBtn : 'Restore size',
+        closeBtn : 'Close'
+      }
+    } = {}, ...items){
         super({element : 'div'});
         this.setAttr({ class : 'floating-panel'})
 
+        this.extendSizeBtn = button(
+          {class: 'ctrl-btn', title: i18n.extendBtn}, 
+          Maximize()
+        )
+        this.restoreSizeBtn = button(
+          {class: 'ctrl-btn', title: i18n.restoreSizeBtn}, 
+          Minimize()
+        )
+
         this.panel_header = div(
-            {class: 'panel-header', id: 'panelHeader'},
+            {class: 'panel-header'},
             div({class: 'panel-title'},'Floating Panel'),
             div({class: 'panel-controls'},
-                button({class: 'ctrl-btn', id: 'reduceBtn', title: 'Reduce'},
+                button({class: 'ctrl-btn', title: i18n.reduceBtn},
                     Minus()
                 ).onClick(()=> this.toggleReduce()),
-                button({class: 'ctrl-btn', id: 'extendBtn', title: 'Extend to full size'},
-                    svg({id: 'extendIcon', viewBox: '0 0 24 24'},
-                    rect({'x': '3', 'y': '3', width: '18', height: '18', rx: '2', ry: '2'}),
-                    ),
-                ).onClick(()=> this.toggleExtend()),
-                button({class: 'ctrl-btn', id: 'closeBtn', title: 'Close'},
+                this.extendSizeBtn.onClick(()=> this.extendSize()),
+                this.restoreSizeBtn.onClick(()=> this.restoreSize()),
+                button(
+                  {class: 'ctrl-btn', title: i18n.closeBtn },
                   X(),
                 ).onClick(()=> this.close()),
             ),
         ).onPtrDown(e => this.startDrag(e.event))
 
-        this.panel_body = div({class: 'panel-body'}, 'Body');
+        this.panel_body = div({class: 'panel-body'}, ...items);
 
         this.append(
             this.panel_header, 
@@ -88,8 +105,6 @@ export class UIFloatingPanel extends UIElement{
           this.isResizing = false;
         });
         
-
-
     }
 
     open(){
@@ -115,33 +130,53 @@ export class UIFloatingPanel extends UIElement{
         else this.element.classList.remove('minimized');
         return this;
     }
-    toggleExtend() {
-        this.triggerAnimation();
-        this.isMaximized = !this.isMaximized;
+    extendSize() {
+        if (this.isMaximized) return;
 
-        if (this.isMaximized) {
-          if (this.isMinimized) {
+        this.triggerAnimation();
+        this.isMaximized = true;
+
+        if (this.isMinimized) {
             this.isMinimized = false;
-            this.element.classList.remove('minimized');
-          }
-          const rect = this.element.getBoundingClientRect();
-          this.normalRect = {
+            this.element.classList.remove("minimized");
+        }
+
+        const rect = this.element.getBoundingClientRect();
+        this.normalRect = {
             left: rect.left,
             top: rect.top,
             width: rect.width,
-            height: rect.height
-          };
-          this.element.classList.add('maximized');
-        //   this.extendIcon.innerHTML = ICONS.restore;
-        //   this.extendBtn.title = 'Restore size';
+            height: rect.height,
+        };
+
+        this.element.classList.add("maximized");
+        this.extendSizeBtn.style({display : 'none'});
+        this.restoreSizeBtn.style({display : ''});
+    }
+
+    restoreSize() {
+        if (!this.isMaximized) return;
+
+        this.triggerAnimation();
+        this.isMaximized = false;
+
+        this.element.classList.remove("maximized");
+
+        this.element.style.left = `${this.normalRect.left}px`;
+        this.element.style.top = `${this.normalRect.top}px`;
+        this.element.style.width = `${this.normalRect.width}px`;
+        this.element.style.height = `${this.normalRect.height}px`;
+
+        this.extendSizeBtn.style({display : ''});
+        this.restoreSizeBtn.style({display : 'none'});
+
+    }
+
+    toggleExtend() {
+        if (this.isMaximized) {
+            this.restoreSize();
         } else {
-          this.element.classList.remove('maximized');
-          this.element.style.left = `${this.normalRect.left}px`;
-          this.element.style.top = `${this.normalRect.top}px`;
-          this.element.style.width = `${this.normalRect.width}px`;
-          this.element.style.height = `${this.normalRect.height}px`;
-        //   this.extendIcon.innerHTML = ICONS.maximize;
-        //   this.extendBtn.title = 'Extend to full size';
+            this.extendSize();
         }
     }
     triggerAnimation() {
@@ -229,42 +264,3 @@ export class UIFloatingPanel extends UIElement{
 }
 
 export const FloatingPanel = call_with_optional_props(UIFloatingPanel);
-
-
-
-
-
-div({class: 'floating-panel', id: 'floatingPanel'},
-   div({class: 'panel-header', id: 'panelHeader'},
-      div({class: 'panel-title'},'Floating Panel'),
-      div({class: 'panel-controls'},
-         button({class: 'ctrl-btn', id: 'reduceBtn', title: 'Reduce'},
-            svg({viewBox: '0 0 24 24'},
-               line({x1: '5', y1: '12', x2: '19', y2: '12'}),
-            ),
-         ),
-         button({class: 'ctrl-btn', id: 'extendBtn', title: 'Extend to full size'},
-            svg({id: 'extendIcon', viewBox: '0 0 24 24'},
-               rect({'x': '3', 'y': '3', width: '18', height: '18', rx: '2', ry: '2'}),
-            ),
-         ),
-         button({class: 'ctrl-btn', id: 'closeBtn', title: 'Close'},
-            svg({viewBox: '0 0 24 24'},
-               line({x1: '18', y1: '6', x2: '6', y2: '18'}),
-               line({x1: '6', y1: '6', x2: '18', y2: '18'}),
-            ),
-         ),
-      ),
-   ),
-   div({class: 'panel-body'},
-      // BODY
-   ),
-   div({class: 'resize-handle n', 'data-axis': 'n'}),
-   div({class: 'resize-handle s', 'data-axis': 's'}),
-   div({class: 'resize-handle e', 'data-axis': 'e'}),
-   div({class: 'resize-handle w', 'data-axis': 'w'}),
-   div({class: 'resize-handle ne', 'data-axis': 'ne'}),
-   div({class: 'resize-handle nw', 'data-axis': 'nw'}),
-   div({class: 'resize-handle se', 'data-axis': 'se'}),
-   div({class: 'resize-handle sw', 'data-axis': 'sw'}),
-)
