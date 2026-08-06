@@ -20,3 +20,8 @@
     Remove readout from the `Joystick`component
     Use ziko-lucide components in `FloatingPanel`
     Introduce i18n in `FloatingPanel` controls
+1.13.0 : 
+    Migrate from `ziko@1.2.0` to `ziko@1.6.1`
+    Add `PrintPageBreak` component
+    Improve `FloatingPanel` using `Swap` from `ziko/dom` 
+

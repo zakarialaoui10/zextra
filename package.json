@@ -1,7 +1,7 @@
 {
   "name": "zextra",
-  "version": "1.11.2",
-  "description": "",
+  "version": "1.13.0",
+  "description": "zikojs extra components",
   "main": "src/index.js",
   "type": "module",
   "types": "./types/index.d.ts",
@@ -28,11 +28,7 @@
     },
     "./wrappers/*": {
       "import": "./wrappers/*/index.js"
-    },
-    ".": "./dist/zextra.mjs",
-    "./ui": "./dist/zextra-ui.mjs",
-    "./canvas": "./dist/zextra-canvas.mjs",
-    "./svg": "./dist/zextra-svg.mjs"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -63,7 +59,7 @@
     "@rollup/plugin-terser": "^1.0.0",
     "cross-env": "^10.1.0",
     "glob": "^13.0.6",
-    "rollup": "^4.62.3",
+    "rollup": "^4.62.4",
     "rollup-plugin-postcss": "^4.0.2"
   },
   "dependencies": {
@@ -71,7 +67,7 @@
     "atropos": "^2.0.2",
     "isotope-layout": "^3.0.6",
     "video.js": "^8.23.9",
-    "ziko": "^1.2.0",
+    "ziko": "^1.6.1",
     "ziko-lucide": "^1.0.0"
   }
 }

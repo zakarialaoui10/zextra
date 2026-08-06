@@ -1,4 +1,9 @@
-import { UIElement, call_with_optional_props, tags} from 'ziko/dom';
+import { 
+  UIElement, 
+  call_with_optional_props, 
+  tags,
+  Swap
+} from 'ziko/dom';
 
 const {
     div,
@@ -12,11 +17,6 @@ import { X } from 'ziko-lucide/X';
 import { Minus } from 'ziko-lucide/Minus'
 import { Maximize } from 'ziko-lucide/Maximize'
 import { Minimize } from 'ziko-lucide/Minimize'
-
-const ICONS = {
-    maximize: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>',
-    restore: '<rect x="8" y="4" width="12" height="12" rx="2"></rect><path d="M4 8v12a2 2 0 0 0 2 2h12"></path>'
-};
 
 export class UIFloatingPanel extends UIElement{
     constructor({
@@ -34,10 +34,15 @@ export class UIFloatingPanel extends UIElement{
         this.extendSizeBtn = button(
           {class: 'ctrl-btn', title: i18n.extendBtn}, 
           Maximize()
-        )
+        ).onClick(()=> this.extendSize()).style({display : 'flex'}),
         this.restoreSizeBtn = button(
           {class: 'ctrl-btn', title: i18n.restoreSizeBtn}, 
           Minimize()
+        ).onClick(()=> this.restoreSize()).style({display : 'flex'})
+
+        this.ctrl_btn = Swap(
+          this.extendSizeBtn,
+          this.restoreSizeBtn
         )
 
         this.panel_header = div(
@@ -47,8 +52,7 @@ export class UIFloatingPanel extends UIElement{
                 button({class: 'ctrl-btn', title: i18n.reduceBtn},
                     Minus()
                 ).onClick(()=> this.toggleReduce()),
-                this.extendSizeBtn.onClick(()=> this.extendSize()),
-                this.restoreSizeBtn.onClick(()=> this.restoreSize()),
+                this.ctrl_btn,
                 button(
                   {class: 'ctrl-btn', title: i18n.closeBtn },
                   X(),
@@ -150,8 +154,9 @@ export class UIFloatingPanel extends UIElement{
         };
 
         this.element.classList.add("maximized");
-        this.extendSizeBtn.style({display : 'none'});
-        this.restoreSizeBtn.style({display : ''});
+        this.ctrl_btn.next()
+        // this.extendSizeBtn.style({display : 'none'});
+        // this.restoreSizeBtn.style({display : ''});
     }
 
     restoreSize() {
@@ -167,8 +172,10 @@ export class UIFloatingPanel extends UIElement{
         this.element.style.width = `${this.normalRect.width}px`;
         this.element.style.height = `${this.normalRect.height}px`;
 
-        this.extendSizeBtn.style({display : ''});
-        this.restoreSizeBtn.style({display : 'none'});
+        this.ctrl_btn.next()
+
+        // this.extendSizeBtn.style({display : ''});
+        // this.restoreSizeBtn.style({display : 'none'});
 
     }
 
