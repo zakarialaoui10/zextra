@@ -1,6 +1,6 @@
 {
   "name": "zextra",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "zikojs extra components",
   "main": "src/index.js",
   "type": "module",
@@ -59,15 +59,14 @@
     "@rollup/plugin-terser": "^1.0.0",
     "cross-env": "^10.1.0",
     "glob": "^13.0.6",
-    "rollup": "^4.62.4",
+    "rollup": "^4.63.1",
     "rollup-plugin-postcss": "^4.0.2"
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "^2.0.12",
     "atropos": "^2.0.2",
     "isotope-layout": "^3.0.6",
-    "video.js": "^8.23.9",
-    "ziko": "^1.6.1",
-    "ziko-lucide": "^1.0.0"
+    "ziko": "^1.10.0",
+    "ziko-lucide": "^1.0.2"
   }
 }
